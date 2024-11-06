@@ -11,9 +11,39 @@
     <h1>Program</h1>
 
     <button type="button">Start/Pause</button>
-    <button type="button">Pace</button>
+
+    <div class="dropdown">
+        <button class="dropbtn">Pace</button>
+        <div class="dropdown-content">
+            <a href="#">One word per second</a>
+            <a href="#">Two word per second</a>
+            <a href="#">Three word per second</a>
+        </div>
+    </div>
+
     <button type="button">Resume</button>
     <button type="button">Back</button>
+    <button id="getTextButton">GetText</button>
+
+    <!--line height-->
+    <!--font-->
+
+    <p><strong>Textsize:</strong>
+        <span class="input-wrap"><span class="width-machine" aria-hidden="true"></span>
+            <input class="input" value="14" type="number"></span>
+    </p>
+    <br>
+
+    <label for="color-picker">Text Color:</label>
+    <input type="color" value="#000000" id="color-picker" />
+
+    <label for="color-picker">Background Color:</label>
+    <input type="color" value="#ffffff" id="color-picker" />
+
+
+    <p><strong>Text: </strong> <textarea class="textarea resize-ta"></textarea></p>
+    <br>
+
 
 
 </body>
