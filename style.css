@@ -71,3 +71,8 @@ nav li a {
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
+
+.highlight {
+    background-color: rgb(0, 255, 204);
+    font-weight: bold;
+ }

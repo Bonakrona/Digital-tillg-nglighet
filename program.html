@@ -10,7 +10,8 @@
 
     <h1>Program</h1>
 
-    <button type="button">Start/Pause</button>
+    <button id="getStartButton">Start</button>
+    <button id="getPauseButton">Pause</button>
 
     <div class="dropdown">
         <button class="dropbtn">Pace</button>
@@ -21,9 +22,10 @@
         </div>
     </div>
 
-    <button type="button">Resume</button>
-    <button type="button">Back</button>
+    <button id="getBackButton">Back</button>
     <button id="getTextButton">GetText</button>
+  
+
 
     <!--line height-->
     <!--font-->
@@ -41,10 +43,13 @@
     <input type="color" value="#ffffff" id="color-picker" />
 
 
-    <p><strong>Text: </strong> <textarea class="textarea resize-ta"></textarea></p>
+    <p><strong>Text: </strong> <textarea id="textarea" class="textarea resize-ta"></textarea></p>
     <br>
+    
 
 
+
+<script src="script.js"></script>
 
 </body>
 
