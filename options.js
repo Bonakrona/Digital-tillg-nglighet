@@ -1,26 +1,26 @@
-var clickedMarkedFunction = false
-document.getElementById('markOption').addEventListener("click", function () {
-    if (clickedMarkedFunction) {
-        clickedMarkedFunction = false
+var clickHighlightWords = false
+document.getElementById('highlightWords').addEventListener("click", function () {
+    if (clickHighlightWords) {
+        clickHighlightWords = false
         console.log("unclicked");
-        document.getElementById("markOption").checked = false;
+        document.getElementById("highlightWords").checked = false;
     } else {
-        clickedMarkedFunction = true
+        clickHighlightWords = true
         console.log("clicked")
-        document.getElementById("markOption").checked = true;
+        document.getElementById("highlightWords").checked = true;
     }
 });
 
-var clickedMovingFunction = false
-document.getElementById('movingOption').addEventListener("click", function () {
-    if (clickedMovingFunction) {
-        clickedMovingFunction = false
+var clickSlidingWords = false
+document.getElementById('slidingWords').addEventListener("click", function () {
+    if (clickSlidingWords) {
+        clickSlidingWords = false
         console.log("unclicked");
-        document.getElementById("movingOption").checked = false;
+        document.getElementById("slidingWords").checked = false;
     } else {
-        clickedMovingFunction = true
+        clickSlidingWords = true
         console.log("clicked")
-        document.getElementById("movingOption").checked = true;
+        document.getElementById("slidingWords").checked = true;
     }
 });
 

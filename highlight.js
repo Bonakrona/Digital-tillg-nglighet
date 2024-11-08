@@ -1,7 +1,7 @@
-function highlightMarkReader(markReader) {
+function highlightWords(highlightWordReader) {
     let pace = 1; // get from button click
 
-    const text = markReader.innerHTML;
+    const text = highlightWordReader.innerHTML;
     const words = text.split(" ");
     const wordCount = words.length;
 
@@ -9,7 +9,7 @@ function highlightMarkReader(markReader) {
         if (i < wordCount) {
             const word = words[i];
             words[i] = `<span class="highlight">${word}</span>`;
-            markReader.innerHTML = words.join(" ");
+            highlightWordReader.innerHTML = words.join(" ");
             setTimeout(() => highlightWord(i + 1), 1000 / pace);
         }
     }
@@ -17,10 +17,20 @@ function highlightMarkReader(markReader) {
 }
 
 
-function highlightMovingReader(movingReader) {
+function highlightCurrentWord(slidingWordReader) {
     let pace = 1; // get from button click
 
-    const text = movingReader.innerHTML;
+    const text = slidingWordReader.innerHTML;
     const words = text.split(" ");
     const wordCount = words.length;
+
+    function highlightWord(i) {
+        if (i < wordCount) {
+            const word = words[i];
+            words[i+2] = `<span class="highlight">${word}</span>`;
+            slidingWordReader.innerHTML = words.join(" ");
+            setTimeout(() => highlightWord(i + 1), 1000 / pace);
+        }
+    }
+    highlightWord(0);
 }
