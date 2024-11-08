@@ -1,45 +1,64 @@
 getStartButton.addEventListener("click", startProgram);
 
 function startProgram() {
-    console.log(textInput);
-
-    const markReader = document.createElement("div");
-    markReader.id = "markReader";
 
     var textInput = document.getElementById('textarea').value;
-
     const newContent = document.createTextNode(textInput);
+    
+    if (clickedMarkedFunction && !clickedMovingFunction) {
 
-    clearMarkReader("markReader");
-    markReader.append(newContent);
-
-    const currentDiv = document.getElementById("markReader");
-    document.body.insertBefore(markReader, currentDiv);
-
-    mark(markReader);
+        console.log("marked function clicked");
+        const markReader = document.createElement("div");
+        markReader.id = "markReader";
+        clearReader("markReader");
+        markReader.append(newContent);
+        const currentDiv = document.getElementById("markReader");
+        document.body.insertBefore(markReader, currentDiv);
+        highlightMarkReader(markReader);
+        
+    } else if (!clickedMarkedFunction && clickedMovingFunction) {
+        console.log("moving function clicked");
+        const movingReader = document.createElement("div");
+        movingReader.id = "movingReader";
+        clearReader("movingReader");
+        movingReader.append(newContent);
+        const currentDiv = document.getElementById("movingReader");
+        document.body.insertBefore(movingReader, currentDiv);
+        
+        startMovingReader(movingReader);
+        
+    } else if (clickedMarkedFunction && clickedMovingFunction) {
+        console.log("Both clicked");
+    } else {
+        console.log("none clicked");
+    }
 }
 
-function clearMarkReader(elementID) {
+function clearReader(elementID) {
     const element = document.getElementById(elementID);
     if (element) {
         element.innerHTML = "";
     }
 }
 
-function mark(markReader) {
-    let pace = 1; // get from button click
 
-    const text = markReader.innerHTML;
-    const words = text.split(" ");
-    const wordCount = words.length;
 
-    function highlightWord(i) {
-        if (i < wordCount) {
-            const word = words[i];
-            words[i] = `<span class="highlight">${word}</span>`;
-            markReader.innerHTML = words.join(" ");
-            setTimeout(() => highlightWord(i + 1), 1000 / pace);
+function startMovingReader(movingReader) {
+    const text = movingReader.textContent; 
+    const words = text.split(" ");         
+    let index = 0;                         
+
+    function displayNextWords() {
+        if (index < words.length) {
+            const currentWords = words.slice(index, index + 5).join(" ");
+            
+            movingReader.innerHTML = currentWords;
+
+            index++;
+            
+            setTimeout(displayNextWords, 1000); 
         }
     }
-    highlightWord(0);
+    displayNextWords();
 }
+
