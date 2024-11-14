@@ -26,7 +26,7 @@ function highlightCurrentWord(slidingWordReader) {
 
     function highlightWord(i) {
         if (i < wordCount) {
-            const word = words[i];
+            const word = words[i+2];
             words[i+2] = `<span class="highlight">${word}</span>`;
             slidingWordReader.innerHTML = words.join(" ");
             setTimeout(() => highlightWord(i + 1), 1000 / pace);

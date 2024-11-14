@@ -1,7 +1,9 @@
 function startSlidingReader(slidingWordReader) {
     const text = slidingWordReader.textContent; 
     const words = text.split(" ");         
-    let index = 0;                         
+    let index = 0;
+    words.unshift("","");
+    
 
     function displayNextWords() {
         if (index < words.length) {
@@ -10,6 +12,7 @@ function startSlidingReader(slidingWordReader) {
             
             //words[index+2] = `<span class="highlight">${currentWords[index]}</span>`;
             highlightCurrentWord(slidingWordReader);
+            
         
             index++;
         
