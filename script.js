@@ -8,6 +8,12 @@ function startProgram() {
     const getTextSize = document.querySelector('.input').value || 14; //14 eftersom vi har det som default
     const applyTextSize = `font-size: ${getTextSize}px;`;
 
+    const selectFont = document.getElementById("selectFont");
+    const selectedFont = selectFont.value || "Times New Roman"; 
+    const applyFont = `font-family: ${selectedFont};`;
+
+    const applyAllStyles = `${applyTextSize} ${applyFont}`;
+
 
     if (clickHighlightWords && !clickSlidingWords) {
 
@@ -17,7 +23,7 @@ function startProgram() {
         clearReader("highlightWordReader");
         highlightWordReader.append(newContent);
 
-        highlightWordReader.style = applyTextSize;
+        highlightWordReader.style = applyAllStyles;
 
         const currentDiv = document.getElementById("markReader");
         document.body.insertBefore(highlightWordReader, currentDiv);
@@ -30,7 +36,7 @@ function startProgram() {
         clearReader("slidingWordReader");
         slidingWordReader.append(newContent);
 
-        slidingWordReader.style = applyTextSize;
+        slidingWordReader.style = applyAllStyles;
 
         const currentDiv = document.getElementById("slidingWordReader"); // funkar ej för tillfället
         document.body.insertBefore(slidingWordReader, currentDiv); // funkar ej för tillfället
