@@ -6,6 +6,11 @@ function startSlidingReader(slidingWordReader) {
     
 
     function displayNextWords() {
+        if (paused) {
+            setTimeout(displayNextWords, 100); 
+            return;
+        }
+
         if (index < words.length) {
             const currentWords = words.slice(index, index + 5).join(" ");
             slidingWordReader.innerHTML = currentWords;   
@@ -15,8 +20,9 @@ function startSlidingReader(slidingWordReader) {
             
         
             index++;
-        
+            
             setTimeout(displayNextWords, 1000); 
+        
         }
     }
     displayNextWords();

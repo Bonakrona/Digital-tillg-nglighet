@@ -6,6 +6,11 @@ function highlightWords(highlightWordReader) {
     const wordCount = words.length;
 
     function highlightWord(i) {
+        if (paused) {
+            setTimeout(() => highlightWord(i), 100); 
+            return;
+        }
+
         if (i < wordCount) {
             const word = words[i];
             words[i] = `<span class="highlight">${word}</span>`;
@@ -25,6 +30,11 @@ function highlightCurrentWord(slidingWordReader) {
     const wordCount = words.length;
 
     function highlightWord(i) {
+        if (paused) {
+            setTimeout(highlightWord(i), 100); 
+            return;
+        }
+
         if (i < wordCount) {
             const word = words[i+2];
             words[i+2] = `<span class="highlight">${word}</span>`;
