@@ -1,24 +1,42 @@
 function highlightWords(highlightWordReader) {
     let pace = 1; // get from button click
+    let index = 0;
 
     const text = highlightWordReader.innerHTML;
     const words = text.split(" ");
     const wordCount = words.length;
 
-    function highlightWord(i) {
+    function backProgram() {
+        const start = Math.max(0, index - 5); 
+        for (let i = index - 1; i >= start; i--) {
+            words[i] = words[i].replace(`<span class="highlight">`, "").replace(`</span>`, "");
+        }
+        index = start; 
+        updateDisplay(); 
+    }
+
+    backButton.addEventListener("click", backProgram);
+
+    function highlightWord() {
         if (paused) {
-            setTimeout(() => highlightWord(i), 100); 
+            setTimeout(() => highlightWord(index), 100); 
             return;
         }
 
-        if (i < wordCount) {
-            const word = words[i];
-            words[i] = `<span class="highlight">${word}</span>`;
+        if (index < wordCount) {
+            const word = words[index];
+            words[index] = `<span class="highlight">${word}</span>`;
             highlightWordReader.innerHTML = words.join(" ");
-            setTimeout(() => highlightWord(i + 1), 1000 / pace);
+            //words[index] = word; //Insåg att denna gjorde att bara ett ord markerades --> kanske vill använda i framtiden
+
+            index++;
+
+            //setTimeout(() => highlightWord(i + 1), 1000 / pace);
+            setTimeout(highlightWord, 1000 / pace);
         }
     }
-    highlightWord(0);
+    highlightWord();
+
 }
 
 

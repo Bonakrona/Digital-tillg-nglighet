@@ -25,5 +25,12 @@ function startSlidingReader(slidingWordReader) {
         
         }
     }
+
+    function backProgram() {
+        index = Math.max(0, index - 5); 
+    }
+
+    backButton.addEventListener("click", backProgram);
+
     displayNextWords();
 }
