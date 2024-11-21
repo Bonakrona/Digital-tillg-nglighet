@@ -1,4 +1,5 @@
 startButton.addEventListener("click", startProgram);
+getTestText.addEventListener("click", getTestTextFunction);
 
 function startProgram() {
 
@@ -12,9 +13,13 @@ function startProgram() {
     const selectedFont = selectFont.value || "Times New Roman"; 
     const applyFont = `font-family: ${selectedFont};`;
 
-    const applyAllStyles = `${applyTextSize} ${applyFont}`;
+    const textColor = document.getElementById("textColor").value || "#000000";
+    const bgColor = document.getElementById("bgColor").value || "#ffffff";
+    const highLightColor = document.getElementById("highlightColor").value || "#ffff00";
+    const applyColors = `color: ${textColor}; background-color: ${bgColor}; highlight-color: ${highLightColor};`;
 
-
+    const applyAllStyles = `${applyTextSize} ${applyFont} ${applyColors}`;
+    
     if (clickHighlightWords && !clickSlidingWords) {
 
         console.log("marked function clicked");
@@ -55,4 +60,10 @@ function clearReader(elementID) {
     if (element) {
         element.innerHTML = "";
     }
+}
+
+function getTestTextFunction() {
+    const textArea = document.getElementById('textarea');
+    textArea.value = "Hi and Welcome! This is a test text you can use in order to try out our options and your figure out your preferences. We truly hope you enjoy this experience and that you will find our tool useful. Please let us know if you have any feedback or suggestions. We are always looking to improve our services. Thank you for your time!";
+    console.log("Test text inserted");
 }

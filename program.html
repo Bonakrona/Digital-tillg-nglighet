@@ -16,20 +16,30 @@
         <input type="radio" id="slidingWords" unchecked />
         <label>Moving option</label>
 
-        <input type="radio" id="highlightWords" unchecked/>
+        <input type="radio" id="highlightWords" unchecked />
         <label>Mark Option</label>
     </div>
-    <div class="dropdown">
+
+    <!-- <div class="dropdown">
         <button class="dropbtn">Pace</button>
         <div class="dropdown-content">
             <a href="#">One word per second</a>
             <a href="#">Two word per second</a>
             <a href="#">Three word per second</a>
         </div>
-    </div>
+    </div> -->
+
+    <p><strong>Pace:</strong>
+        <span class="input-wrap">
+            <span class="width-machine" aria-hidden="true"></span>
+            <input id="paceEntered" class="input" value="3" type="number">
+        </span>
+    </p>
+
+
 
     <button id="backButton">Back</button>
-    <button id="textButton">GetText</button>
+    <button id="getTestText">GetText</button>
 
 
 
@@ -62,10 +72,13 @@
 
 
     <label for="color-picker">Text Color:</label>
-    <input type="color" value="#000000" id="color-picker" />
+    <input type="color" value="#000000" id="textColor" />
 
     <label for="color-picker">Background Color:</label>
-    <input type="color" value="#ffffff" id="color-picker" />
+    <input type="color" value="#ffffff" id="bgColor" />
+
+    <label for="color-picker">Highlight Color:</label>
+    <input type="color" value="#ffff00" id="highlightColor" />
 
 
     <p><strong>Input text: </strong> <textarea id="textarea" class="textarea resize-ta"></textarea></p>

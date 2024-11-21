@@ -1,5 +1,5 @@
 function highlightWords(highlightWordReader) {
-    let pace = 1; // get from button click
+    const pace = document.getElementById("paceEntered").value;
     let index = 0;
 
     const text = highlightWordReader.innerHTML;
@@ -41,7 +41,7 @@ function highlightWords(highlightWordReader) {
 
 
 function highlightCurrentWord(slidingWordReader) {
-    let pace = 1; // get from button click
+    const pace = document.getElementById("paceEntered").value;
 
     const text = slidingWordReader.innerHTML;
     const words = text.split(" ");
