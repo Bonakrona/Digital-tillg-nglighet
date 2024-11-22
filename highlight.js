@@ -1,5 +1,7 @@
 function highlightWords(highlightWordReader) {
     const pace = document.getElementById("paceEntered").value;
+    const highlightColor = document.getElementById("highlightColor").value || "#ffff00";
+    const bgColor = document.getElementById("bgColor").value || "#ffffff";
     let index = 0;
 
     const text = highlightWordReader.innerHTML;
@@ -9,10 +11,10 @@ function highlightWords(highlightWordReader) {
     function backProgram() {
         const start = Math.max(0, index - 5); 
         for (let i = index - 1; i >= start; i--) {
-            words[i] = words[i].replace(`<span class="highlight">`, "").replace(`</span>`, "");
+            words[i] = words[i].replace(`<span style="background-color: ${highlightColor};">`, "").replace(`</span>`, "");
         }
         index = start; 
-        updateDisplay(); 
+        highlightWordReader.innerHTML = words.join(" ");
     }
 
     backButton.addEventListener("click", backProgram);
@@ -25,23 +27,18 @@ function highlightWords(highlightWordReader) {
 
         if (index < wordCount) {
             const word = words[index];
-            words[index] = `<span class="highlight">${word}</span>`;
+            words[index] = `<span style="background-color: ${highlightColor};"> ${word}</span>`; 
             highlightWordReader.innerHTML = words.join(" ");
-            //words[index] = word; //Insåg att denna gjorde att bara ett ord markerades --> kanske vill använda i framtiden
-
             index++;
-
-            //setTimeout(() => highlightWord(i + 1), 1000 / pace);
             setTimeout(highlightWord, 1000 / pace);
         }
     }
     highlightWord();
-
 }
-
 
 function highlightCurrentWord(slidingWordReader) {
     const pace = document.getElementById("paceEntered").value;
+    const highlightColor = document.getElementById("highlightColor").value || "#ffff00";
 
     const text = slidingWordReader.innerHTML;
     const words = text.split(" ");
@@ -55,7 +52,7 @@ function highlightCurrentWord(slidingWordReader) {
 
         if (i < wordCount) {
             const word = words[i+2];
-            words[i+2] = `<span class="highlight">${word}</span>`;
+            words[i+2] = `<span style="background-color: ${highlightColor};"> ${word}</span>`; 
             slidingWordReader.innerHTML = words.join(" ");
             setTimeout(() => highlightWord(i + 1), 1000 / pace);
         }

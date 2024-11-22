@@ -1,4 +1,5 @@
 function startSlidingReader(slidingWordReader) {
+    const pace = document.getElementById("paceEntered").value;
     const text = slidingWordReader.textContent; 
     const words = text.split(" ");         
     let index = 0;
@@ -28,6 +29,10 @@ function startSlidingReader(slidingWordReader) {
 
     function backProgram() {
         index = Math.max(0, index - 5); 
+        if (paused) {
+            const currentWords = words.slice(index, index + 5).join(" ");
+            slidingWordReader.innerHTML = currentWords; 
+        }  
     }
 
     backButton.addEventListener("click", backProgram);
