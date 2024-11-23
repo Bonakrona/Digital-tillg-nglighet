@@ -8,10 +8,17 @@ function highlightWords(highlightWordReader) {
     const words = text.split(" ");
     const wordCount = words.length;
 
+    const selectNbrOfHighlightedWords = document.getElementById("nbrOfWordsButton");
+    const selectedNbrOfHighlightedWords = selectNbrOfHighlightedWords.value || "wholeText";
+
     function backProgram() {
         const start = Math.max(0, index - 5); 
-        for (let i = index - 1; i >= start; i--) {
-            words[i] = words[i].replace(`<span style="background-color: ${highlightColor};">`, "").replace(`</span>`, "");
+        if (selectedNbrOfHighlightedWords == "oneWord") { //senare lägga till one sentence som alternativ
+            words[start] = `<span style="background-color: ${highlightColor};"> ${words[start]}</span>`;
+        } else {
+            for (let i = index - 1; i >= start; i--) {
+                words[i] = words[i].replace(`<span style="background-color: ${highlightColor};">`, "").replace(`</span>`, "");
+            }
         }
         index = start; 
         highlightWordReader.innerHTML = words.join(" ");
@@ -26,9 +33,16 @@ function highlightWords(highlightWordReader) {
         }
 
         if (index < wordCount) {
+
             const word = words[index];
             words[index] = `<span style="background-color: ${highlightColor};"> ${word}</span>`; 
             highlightWordReader.innerHTML = words.join(" ");
+            if (selectedNbrOfHighlightedWords == "oneWord") { //senare lägga till one sentence som alternativ
+                for (let i = 0; i < words.length; i++) {
+                    words[i] = words[i].replace(`<span style="background-color: ${highlightColor};">`, "").replace(`</span>`, "");
+                }
+                words[index] = word;
+            }
             index++;
             setTimeout(highlightWord, 1000 / pace);
         }

@@ -79,3 +79,7 @@ nav li a {
 .slidingWords {
     font-size: 14px;
 }
+
+#nbrOfWordsButton {
+    display: none;
+}
