@@ -60,9 +60,10 @@ function highlightCurrentWord(slidingWordReader) {
 
     function highlightWord(i) {
         if (paused) {
-            setTimeout(highlightWord(i), 100); 
+            setTimeout(highlightWord(i), 100);
             return;
         }
+
 
         if (i < wordCount) {
             const word = words[i+2];

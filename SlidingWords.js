@@ -1,38 +1,39 @@
 function startSlidingReader(slidingWordReader) {
     const pace = document.getElementById("paceEntered").value;
-    const text = slidingWordReader.textContent; 
-    const words = text.split(" ");         
+    const text = slidingWordReader.textContent;
+    const words = text.split(" ");
     let index = 0;
-    words.unshift("","");
-    
+    words.unshift("", "");
+
 
     function displayNextWords() {
         if (paused) {
-            setTimeout(displayNextWords, 100); 
+            setTimeout(displayNextWords, 100);
             return;
         }
 
         if (index < words.length) {
             const currentWords = words.slice(index, index + 5).join(" ");
-            slidingWordReader.innerHTML = currentWords;   
-            
+            slidingWordReader.innerHTML = currentWords;
+
             //words[index+2] = `<span class="highlight">${currentWords[index]}</span>`;
             highlightCurrentWord(slidingWordReader);
-            
-        
+
+
             index++;
-            
-            setTimeout(displayNextWords, 1000 / pace); 
-        
+
+            setTimeout(displayNextWords, 1000 / pace);
+
         }
     }
 
     function backProgram() {
-        index = Math.max(0, index - 5); 
+        index = Math.max(0, index - 5);
+        const currentWords = words.slice(index, index + 5).join(" ");
+        slidingWordReader.innerHTML = currentWords;
         if (paused) {
-            const currentWords = words.slice(index, index + 5).join(" ");
-            slidingWordReader.innerHTML = currentWords; 
-        }  
+            highlightCurrentWord(slidingWordReader);
+        }
     }
 
     backButton.addEventListener("click", backProgram);

@@ -8,71 +8,99 @@ function startProgram() {
 
     const getTextSize = document.getElementById("sizeEntered").value || 14; //14 eftersom vi har det som default
     const selectFont = document.getElementById("selectFont");
-    const selectedFont = selectFont.value || "Times New Roman"; 
-    
+    const selectedFont = selectFont.value || "Times New Roman";
+
     const textColor = document.getElementById("textColor").value || "#000000";
     const bgColor = document.getElementById("bgColor").value || "#ffffff";
-    
+
     const applyTextSize = `font-size: ${getTextSize}px;`;
     const applyFont = `font-family: ${selectedFont};`;
-    
+
     const highLightColor = document.getElementById("highlightColor").value || "#ffff00";
     const applyColors = `color: ${textColor}; background-color: ${bgColor}; highlight-color: ${highLightColor};`;
-    
+
     const applyAllStyles = `${applyTextSize} ${applyFont} ${applyColors}`;
     const highlightWordReader = document.createElement("div");
     const slidingWordReader = document.createElement("div");
     highlightWordReader.style.backgroundColor = bgColor;
     slidingWordReader.style.backgroundColor = bgColor;
-    
+
     if (clickHighlightWords && !clickSlidingWords) {
 
         console.log("marked function clicked");
+
+        let oldHighlightReader = document.getElementById("highlightWordReader");
+        if (oldHighlightReader) {
+            oldHighlightReader.remove(); 
+        }
+
         highlightWordReader.id = "highlightWordReader";
-        clearReader("highlightWordReader");
-        highlightWordReader.append(newContent);
+        highlightWordReader.innerHTML = ""; 
+        highlightWordReader.append(newContent); 
 
         highlightWordReader.style.cssText = applyAllStyles;
 
         const currentDiv = document.getElementById("markReader");
         document.body.insertBefore(highlightWordReader, currentDiv);
+
         highlightWords(highlightWordReader);
 
     } else if (!clickHighlightWords && clickSlidingWords) {
         console.log("moving function clicked");
+
+        let oldSlidingReader = document.getElementById("slidingWordReader");
+        if (oldSlidingReader) {
+            oldSlidingReader.remove(); 
+        }
+
         slidingWordReader.id = "slidingWordReader";
-        clearReader("slidingWordReader");
-        slidingWordReader.append(newContent);
+        slidingWordReader.innerHTML = ""; 
+        slidingWordReader.append(newContent); 
 
         slidingWordReader.style.cssText = applyAllStyles;
 
-        const currentDiv = document.getElementById("slidingWordReader"); // funkar ej för tillfället
-        document.body.insertBefore(slidingWordReader, currentDiv); // funkar ej för tillfället
+        const currentDiv = document.getElementById("slidingWordReader");
+        document.body.insertBefore(slidingWordReader, currentDiv);
 
         startSlidingReader(slidingWordReader);
 
     } else if (clickHighlightWords && clickSlidingWords) {
-        clearReader("highlightWordReader");
-        clearReader("slidingWordReader");
+        
+        console.log("Combined function clicked");
+
+        let oldHighlightReader = document.getElementById("highlightWordReader");
+        if (oldHighlightReader) {
+            oldHighlightReader.remove(); 
+        }
 
         highlightWordReader.id = "highlightWordReader";
-        slidingWordReader.id = "slidingWordReader";
-
-        highlightWordReader.append(newContent);
-        slidingWordReader.append(newContent);
+        highlightWordReader.innerHTML = ""; 
+        highlightWordReader.append(newContent.cloneNode(true)); 
 
         highlightWordReader.style.cssText = applyAllStyles;
+
+        const highlightReaderDiv = document.getElementById("markReader");
+        document.body.insertBefore(highlightWordReader, highlightReaderDiv);
+
+        highlightWords(highlightWordReader);
+
+        let oldSlidingReader = document.getElementById("slidingWordReader");
+        if (oldSlidingReader) {
+            oldSlidingReader.remove(); 
+        }
+
+        slidingWordReader.id = "slidingWordReader";
+        slidingWordReader.innerHTML = ""; 
+        slidingWordReader.append(newContent.cloneNode(true)); 
+
         slidingWordReader.style.cssText = applyAllStyles;
 
-        const currentDivMark = document.getElementById("markReader");
-        const currentDivSlide = document.getElementById("slidingWordReader"); // funkar ej för tillfället
-        
-        document.body.insertBefore(highlightWordReader, currentDivMark);
-        document.body.insertBefore(slidingWordReader, currentDivSlide); // funkar ej för tillfället
+        const slidingReaderDiv = document.getElementById("slidingWordReader");
+        document.body.insertBefore(slidingWordReader, slidingReaderDiv);
 
         startSlidingReader(slidingWordReader);
-        highlightWords(highlightWordReader);
         
+
     } else {
         console.log("none clicked");
     }
