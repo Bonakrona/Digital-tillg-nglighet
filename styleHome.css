@@ -1,0 +1,119 @@
+/* 
+. = class 
+# = id
+*/
+
+body {
+    background-color: rgb(73, 206, 210);
+}
+
+#welcomeDisplayButton {
+    background-color: rgb(73, 206, 210);
+    color: black;
+    border: 2px solid rgb(73, 206, 210);
+    padding: 10px 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 36px;
+    margin: 10px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: 40%;
+}
+
+#infoDisplayButton {
+    background-color: rgb(73, 206, 210);
+    color: black;
+    border: 2px solid rgb(73, 206, 210);
+    padding: 10px 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 28px;
+    margin: 10px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: 37%;
+}
+
+#startButton {
+    background-color: rgb(125, 227, 147);
+    color: black;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 30px 90px;
+    cursor: pointer;
+    border-radius: 150px;
+    font-size: 36px;
+    margin: 10px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: 38%;
+    margin-top: 70px;
+}
+
+#welcomeTextField,
+#infoTextField {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+
+.container {
+    border: 1px solid rgb(73, 206, 210);
+}
+
+.container .expanded {
+    display: none;
+    padding: 10px;
+
+}
+
+
+/*#startButton {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }*/
+
+#startButton:hover {
+    background-color: #3e8e41
+}
+
+#startButton:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.button {
+    position: relative;
+    padding-left: 1em;
+}
+
+.button:hover:after {
+    content: '\2304';
+    display: inline-block;
+    font-size: 1.0m;
+    transition: transform 0.3s ease;
+    transform: translateY(-20%) rotate(0);
+}
+
+.button.rotate:after {
+    transform: translateY(20%) rotate(-180deg); /* Rotate the arrow 180 degrees while staying centered */
+}
+
+
+
+
