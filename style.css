@@ -1,16 +1,20 @@
-main {
+main {}
 
-}
 body {
-    font-family: 'Roboto', sans-serif;
-    margin-top : 80px;
-    height : 100%;
-    padding: 30px;
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Ensure space between the children */
+    align-items: flex-start; /* Align children to the top */
+    margin: 0; /* Remove body margin for clean layout */
+    padding: 20px; /* Padding around the layout */
+    background-color: #979090; /* Light background for better contrast */
+    height: 100vh; /* Make body take full viewport height */
+    box-sizing: border-box;
+    margin-top: 100px;
 }
 
 nav {
     background-color: white;
-    position: fixed;
+    position:absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -74,7 +78,7 @@ nav li a {
 
 .highlight-color {
     background-color: rgb(0, 255, 204);
- }
+}
 
 .slidingWords {
     font-size: 14px;
@@ -83,3 +87,186 @@ nav li a {
 #nbrOfWordsButton {
     display: none;
 }
+
+
+#settings {
+    flex: 1; /* Each child takes equal width */
+    border: 1px solid #ffffff; /* Subtle border for better aesthetics */
+    /*border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Space inside each box */
+    margin: 10px; /* Space between the boxes */
+    background-color: #fff; /* White background for a clean look */
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+    text-align: left; /* Align text for readability */
+    max-width: 40%; /* Ensure each child takes up to half the width */
+}
+
+#running {
+    flex: 1; /* Each child takes equal width */
+    border: 1px solid #ffffff; /* Subtle border for better aesthetics */
+    /*border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Space inside each box */
+    margin: 10px; /* Space between the boxes */
+    background-color: #fff; /* White background for a clean look */
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+    text-align: left; /* Align text for readability */
+    max-width: 60%; /* Ensure each child takes up to half the width */
+}
+
+
+.runButtons {
+    background-color: rgb(152, 254, 253);
+    color: black;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 150px;
+    font-size: 24px;
+    margin: 10px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: 0%;
+    margin-top: 5px;
+}
+
+#getTestText {
+    background-color: rgb(152, 254, 253);
+    color: black;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 4px 12px;
+    cursor: pointer;
+    border-radius: 150px;
+    font-size: 15px;
+    margin: 10px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: 35%;
+    margin-top: -10px;
+}
+
+#textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+
+.input-wrap {
+    position: relative;
+}
+
+.input-wrap .input {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    font-size: 15px;
+    text-align: center;
+}
+
+.width-machine {
+    padding: 0 18px;
+}
+
+.colors {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+.options {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.options input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.options:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.options input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.options input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.options .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#highlightWordReader {
+    padding: 10px;
+    /* Space inside the div */
+    border: 1px solid #ccc;
+    /* Border for visibility */
+    border-radius: 5px;
+    /* Rounded corners */
+    margin: 100px 0;
+    /* Space above and below */
+}
+
+#slidingWordReader {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-left: 100px 0;
+    text-align: center;
+}
+
+
+
+

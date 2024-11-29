@@ -8,92 +8,116 @@
 
 <body>
 
-    <h1>Program</h1>
+    <nav class="Navbar">
+        <ul>
+            <li class="Logo">Logo</li>
+            <li class="Home"><a href="#">Home</a></li>
+            <li class="Start"><a href="#">Start</a></li>
+        </ul>
+    </nav>
 
-    <button id="startButton">Start</button>
-    <button id="pauseButton">Pause</button>
-    <div>
-        <input type="radio" id="slidingWords" unchecked />
-        <label>Moving option</label>
+    <div id="settings" class="child">
 
-        <input type="radio" id="highlightWords" unchecked />
-        <label>Mark Option</label>
+        <h1>Settings</h1>
+
+        <p>
+            <strong>Paste your chosen text here:</strong>
+            <br>
+            <textarea id="textarea" class="textarea resize-ta"></textarea>
+        </p>
+
+
+        <button id="getTestText">GetText</button>
+
+
+        <p><strong>Textsize:</strong>
+            <span class="input-wrap">
+                <span class="width-machine" aria-hidden="true"></span>
+                <input id="sizeEntered" class="input" value="34" type="number" max="99" min="1"></span>
+        </p>
+
+
+        <label for="fontSelect"><strong>Font:</strong></label>
+        <select id="selectFont">
+            <option value="Times New Roman" selected>Times New Roman</option>
+            <option value="Arial">Arial</option>
+            <option value="Sans Serif">Sans Serif</option>
+            <option value="Comic Sans MS">Comic Sans MS</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Trebuchet MS">Trebuchet MS</option>
+            <option value="Arial Black">Arial Black</option>
+            <option value="Impact">Impact</option>
+            <option value="Bookman">Bookman</option>
+            <option value="Garamond">Garamond</option>
+            <option value="Palatino">Palatino</option>
+            <option value="Georgia">Georgia</option>
+        </select>
+
+
+        <p><strong>Pace:</strong>
+            <span class="input-wrap">
+                <span class="width-machine" aria-hidden="true"></span>
+                <input id="paceEntered" class="input" value="3" type="number" max="20" min="1">
+            </span>
+        </p>
+
+
+        <label for="color-picker"><strong>Text Color:</strong></label>
+        <input type="color" value="#000000" id="textColor" class="colors" />
+
+        <label for="color-picker"><strong>Background Color:</strong></label>
+        <input type="color" value="#ffffff" id="bgColor" class="colors" />
+
+        <label for="color-picker"><strong>Highlight Color:</strong></label>
+        <input type="color" value="#ffff00" id="highlightColor" class="colors" />
+
+
+        <!--<div>
+                <label><strong>Moving option</strong>
+                    <input type="checkbox" id="slidingWords" class="options" />
+                    <span class="checkmark"></span>
+                </label>
+                
+                <label><strong>Mark Option</strong>
+                    <input type="checkbox" id="highlightWords" class="options" />
+                    <span class="checkmark"></span>
+                </label>
+            </div>-->
+        <div>
+            <label class="options"><strong>Moving option</strong>
+                <input type="checkbox" id="slidingWords" />
+                <span class="checkmark"></span>
+            </label>
+
+            <label class="options"><strong>Mark Option</strong>
+                <input type="checkbox" id="highlightWords" />
+                <span class="checkmark"></span>
+            </label>
+        </div>
+
+
+        <!--samma sätt som font-->
+        <select id="nbrOfWordsButton">
+            <option value="wholeText" selected>Whole text</option>
+            <option value="oneWord">One word</option>
+        </select>
     </div>
 
-    <!--samma sätt som font-->
-    <select id="nbrOfWordsButton"> 
-        <option value="wholeText" selected>Whole text</option>
-        <option value="oneWord">One word</option>
-        <option value="oneSentence">One sentence</option>
-    </select>
 
-    <!-- <div class="dropdown">
-        <button class="dropbtn">Pace</button>
-        <div class="dropdown-content">
-            <a href="#">One word per second</a>
-            <a href="#">Two word per second</a>
-            <a href="#">Three word per second</a>
-        </div>
-    </div> -->
+    <div id="running" class="child">
 
-    <p><strong>Pace:</strong>
-        <span class="input-wrap">
-            <span class="width-machine" aria-hidden="true"></span>
-            <input id="paceEntered" class="input" value="3" type="number">
-        </span>
-    </p>
-
-
-
-    <button id="backButton">Back</button>
-    <button id="getTestText">GetText</button>
-
-    <!--line height-->
-
-    <p><strong>Textsize:</strong>
-        <span class="input-wrap">
-            <span class="width-machine" aria-hidden="true"></span>
-            <input id="sizeEntered" class="input" value="14" type="number"></span>
-    </p>
-
-    <br>
-
-    <label for="fontSelect">Font:</label>
-    <select id="selectFont">
-        <option value="Times New Roman" selected>Times New Roman</option>
-        <option value="Arial">Arial</option>
-        <option value="Sans Serif">Sans Serif</option>
-        <option value="Comic Sans MS">Comic Sans MS</option>
-        <option value="Courier New">Courier New</option>
-        <option value="Verdana">Verdana</option>
-        <option value="Trebuchet MS">Trebuchet MS</option>
-        <option value="Arial Black">Arial Black</option>
-        <option value="Impact">Impact</option>
-        <option value="Bookman">Bookman</option>
-        <option value="Garamond">Garamond</option>
-        <option value="Palatino">Palatino</option>
-        <option value="Georgia">Georgia</option>
-    </select>
-
-
-
-    <label for="color-picker">Text Color:</label>
-    <input type="color" value="#000000" id="textColor" />
-
-    <label for="color-picker">Background Color:</label>
-    <input type="color" value="#ffffff" id="bgColor" />
-
-    <label for="color-picker">Highlight Color:</label>
-    <input type="color" value="#ffff00" id="highlightColor" />
-
-
-    <p><strong>Input text: </strong> <textarea id="textarea" class="textarea resize-ta"></textarea></p>
-    <br>
-
-
-    <script src="Script.js"></script>
-    <script src="options.js"></script>
-    <script src="Highlight.js"></script>
+        <h1>Run the program</h1>
+        
+        <button id="startButton" class="runButtons">Start</button>
+        <button id="pauseButton" class="runButtons">Pause</button>
+        <button id="backButton" class="runButtons">Back</button>
+        
+    </div>
+        
+        <script src="Script.js"></script>
+        <script src="options.js"></script>
+        <script src="Highlight.js"></script>
     <script src="SlidingWords.js"></script>
     <script src="Pause.js"></script>
     <script src="nbrOfWordsHighlighted.js"></script>
