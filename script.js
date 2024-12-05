@@ -29,6 +29,19 @@ function startProgram() {
 
     const runningDiv = document.getElementById("running");
 
+    highlightWordReader.id = "highlightWordReader";
+    highlightWordReader.innerHTML = "";
+    highlightWordReader.style.cssText = applyAllStyles;
+
+    highlightWordReader.style.height = "300px";  // Fixed height
+    highlightWordReader.style.overflowY = "auto";  // Vertical scrolling
+    highlightWordReader.style.border = "1px solid #ccc";  // Optional border
+    highlightWordReader.style.padding = "10px";  // Optional padding
+
+    slidingWordReader.id = "slidingWordReader";
+    slidingWordReader.innerHTML = "";
+    slidingWordReader.style.cssText = applyAllStyles;
+
     if (clickHighlightWords && !clickSlidingWords) {
         console.log("Marked function clicked");
 
@@ -37,15 +50,7 @@ function startProgram() {
             oldHighlightReader.remove();
         }
 
-        highlightWordReader.id = "highlightWordReader";
-        highlightWordReader.innerHTML = "";
         highlightWordReader.append(newContent);
-        highlightWordReader.style.cssText = applyAllStyles;
-
-        highlightWordReader.style.height = "300px";  // Fixed height
-        highlightWordReader.style.overflowY = "auto";  // Vertical scrolling
-        highlightWordReader.style.border = "1px solid #ccc";  // Optional border
-        highlightWordReader.style.padding = "10px";  // Optional padding
 
         runningDiv.appendChild(highlightWordReader);
         highlightWords(highlightWordReader);
@@ -57,10 +62,8 @@ function startProgram() {
             oldSlidingReader.remove();
         }
 
-        slidingWordReader.id = "slidingWordReader";
-        slidingWordReader.innerHTML = "";
         slidingWordReader.append(newContent);
-        slidingWordReader.style.cssText = applyAllStyles;
+
 
         runningDiv.appendChild(slidingWordReader);
         startSlidingReader(slidingWordReader);
@@ -72,28 +75,16 @@ function startProgram() {
             oldSlidingReader.remove();
         }
 
-        slidingWordReader.id = "slidingWordReader";
-        slidingWordReader.innerHTML = "";
-        slidingWordReader.append(newContent.cloneNode(true));
-        slidingWordReader.style.cssText = applyAllStyles;
-
-        runningDiv.appendChild(slidingWordReader);
-        startSlidingReader(slidingWordReader);
-
         let oldHighlightReader = document.getElementById("highlightWordReader");
         if (oldHighlightReader) {
             oldHighlightReader.remove();
         }
-
-        highlightWordReader.id = "highlightWordReader";
-        highlightWordReader.innerHTML = "";
+      
+        slidingWordReader.append(newContent.cloneNode(true));
         highlightWordReader.append(newContent.cloneNode(true));
-        highlightWordReader.style.cssText = applyAllStyles;
 
-        highlightWordReader.style.height = "300px";  // Fixed height
-        highlightWordReader.style.overflowY = "auto";  // Vertical scrolling
-        highlightWordReader.style.border = "1px solid #ccc";  // Optional border
-        highlightWordReader.style.padding = "10px";  // Optional padding
+        runningDiv.appendChild(slidingWordReader);
+        startSlidingReader(slidingWordReader);
 
         runningDiv.appendChild(highlightWordReader);
         highlightWords(highlightWordReader);
@@ -102,8 +93,6 @@ function startProgram() {
         console.log("None clicked");
     }
 }
-
-
 
 function clearReader(elementID) {
     const element = document.getElementById(elementID);
