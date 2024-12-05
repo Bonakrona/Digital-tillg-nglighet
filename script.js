@@ -67,6 +67,7 @@ function startProgram() {
 
         runningDiv.appendChild(slidingWordReader);
         startSlidingReader(slidingWordReader);
+        
     } else if (clickHighlightWords && clickSlidingWords) {
         console.log("Combined function clicked");
 
