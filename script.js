@@ -13,7 +13,7 @@ function startProgram() {
     const textColor = document.getElementById("textColor").value || "#000000";
     const bgColor = document.getElementById("bgColor").value || "#ffffff";
 
-    const applyTextSize = `font-size: ${getTextSize}px; line-height: ${(getLineHeight * 18)}px;`;
+    const applyTextSize = `font-size: ${getTextSize}px; line-height: ${(38+(getLineHeight - 1)*5)}px;`;
     const applyFont = `font-family: ${selectedFont};`;
 
     const highLightColor = document.getElementById("highlightColor").value || "#ffff00";
