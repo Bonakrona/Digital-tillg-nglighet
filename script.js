@@ -6,13 +6,14 @@ function startProgram() {
     const newContent = document.createTextNode(textInput);
 
     const getTextSize = document.getElementById("sizeEntered").value || 14; // Default font size
+    const getLineHeight = document.getElementById("lineHeightEntered").value || 2;
     const selectFont = document.getElementById("selectFont");
     const selectedFont = selectFont.value || "Times New Roman";
 
     const textColor = document.getElementById("textColor").value || "#000000";
     const bgColor = document.getElementById("bgColor").value || "#ffffff";
 
-    const applyTextSize = `font-size: ${getTextSize}px;`;
+    const applyTextSize = `font-size: ${getTextSize}px; line-height: ${(getLineHeight + 20)*1.2}px;`;
     const applyFont = `font-family: ${selectedFont};`;
 
     const highLightColor = document.getElementById("highlightColor").value || "#ffff00";
