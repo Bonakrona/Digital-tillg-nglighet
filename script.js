@@ -26,6 +26,7 @@ function startProgram() {
     highlightWordReader.style.backgroundColor = bgColor;
     slidingWordReader.style.backgroundColor = bgColor;
 
+
     const runningDiv = document.getElementById("running");
 
     if (clickHighlightWords && !clickSlidingWords) {
@@ -33,59 +34,69 @@ function startProgram() {
 
         let oldHighlightReader = document.getElementById("highlightWordReader");
         if (oldHighlightReader) {
-            oldHighlightReader.remove(); 
+            oldHighlightReader.remove();
         }
 
         highlightWordReader.id = "highlightWordReader";
-        highlightWordReader.innerHTML = ""; 
-        highlightWordReader.append(newContent); 
+        highlightWordReader.innerHTML = "";
+        highlightWordReader.append(newContent);
         highlightWordReader.style.cssText = applyAllStyles;
 
-        runningDiv.appendChild(highlightWordReader); 
-        highlightWords(highlightWordReader); 
+        highlightWordReader.style.height = "300px";  // Fixed height
+        highlightWordReader.style.overflowY = "auto";  // Vertical scrolling
+        highlightWordReader.style.border = "1px solid #ccc";  // Optional border
+        highlightWordReader.style.padding = "10px";  // Optional padding
+
+        runningDiv.appendChild(highlightWordReader);
+        highlightWords(highlightWordReader);
     } else if (!clickHighlightWords && clickSlidingWords) {
         console.log("Moving function clicked");
 
         let oldSlidingReader = document.getElementById("slidingWordReader");
         if (oldSlidingReader) {
-            oldSlidingReader.remove(); 
+            oldSlidingReader.remove();
         }
 
         slidingWordReader.id = "slidingWordReader";
-        slidingWordReader.innerHTML = ""; 
-        slidingWordReader.append(newContent); 
+        slidingWordReader.innerHTML = "";
+        slidingWordReader.append(newContent);
         slidingWordReader.style.cssText = applyAllStyles;
 
-        runningDiv.appendChild(slidingWordReader); 
-        startSlidingReader(slidingWordReader); 
+        runningDiv.appendChild(slidingWordReader);
+        startSlidingReader(slidingWordReader);
     } else if (clickHighlightWords && clickSlidingWords) {
         console.log("Combined function clicked");
 
         let oldSlidingReader = document.getElementById("slidingWordReader");
         if (oldSlidingReader) {
-            oldSlidingReader.remove(); 
+            oldSlidingReader.remove();
         }
 
         slidingWordReader.id = "slidingWordReader";
-        slidingWordReader.innerHTML = ""; 
-        slidingWordReader.append(newContent.cloneNode(true)); 
+        slidingWordReader.innerHTML = "";
+        slidingWordReader.append(newContent.cloneNode(true));
         slidingWordReader.style.cssText = applyAllStyles;
 
-        runningDiv.appendChild(slidingWordReader); 
-        startSlidingReader(slidingWordReader); 
+        runningDiv.appendChild(slidingWordReader);
+        startSlidingReader(slidingWordReader);
 
         let oldHighlightReader = document.getElementById("highlightWordReader");
         if (oldHighlightReader) {
-            oldHighlightReader.remove(); 
+            oldHighlightReader.remove();
         }
 
         highlightWordReader.id = "highlightWordReader";
-        highlightWordReader.innerHTML = ""; 
-        highlightWordReader.append(newContent.cloneNode(true)); 
+        highlightWordReader.innerHTML = "";
+        highlightWordReader.append(newContent.cloneNode(true));
         highlightWordReader.style.cssText = applyAllStyles;
 
-        runningDiv.appendChild(highlightWordReader); 
-        highlightWords(highlightWordReader); 
+        highlightWordReader.style.height = "300px";  // Fixed height
+        highlightWordReader.style.overflowY = "auto";  // Vertical scrolling
+        highlightWordReader.style.border = "1px solid #ccc";  // Optional border
+        highlightWordReader.style.padding = "10px";  // Optional padding
+
+        runningDiv.appendChild(highlightWordReader);
+        highlightWords(highlightWordReader);
 
     } else {
         console.log("None clicked");
