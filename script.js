@@ -33,10 +33,10 @@ function startProgram() {
     highlightWordReader.innerHTML = "";
     highlightWordReader.style.cssText = applyAllStyles;
 
-    highlightWordReader.style.height = "300px";  // Fixed height
+    highlightWordReader.style.marginTop = "10px";
+    highlightWordReader.style.height = "400px";  // Fixed height
     highlightWordReader.style.overflowY = "auto";  // Vertical scrolling
     highlightWordReader.style.border = "1px solid #ccc";  // Optional border
-    highlightWordReader.style.padding = "10px";  // Optional padding
 
     slidingWordReader.id = "slidingWordReader";
     slidingWordReader.innerHTML = "";
@@ -67,7 +67,7 @@ function startProgram() {
 
         runningDiv.appendChild(slidingWordReader);
         startSlidingReader(slidingWordReader);
-        
+
     } else if (clickHighlightWords && clickSlidingWords) {
         console.log("Combined function clicked");
 
