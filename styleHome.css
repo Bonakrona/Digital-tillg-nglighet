@@ -44,23 +44,6 @@ nav .Home a {
     border-radius: 5px;   
 }
 
-
-/*#welcomeDisplayButton {
-    background-color: #FAEBD7;
-    color: black;
-    border: 2px solid #FAEBD7;
-    padding: 10px 24px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 36px;
-    margin: 10px;
-    text-align: center;
-    display: inline-block;
-    text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
-    margin-left: 30%;
-    font-family: 'Times new Roman';
-}*/
 #welcomeDisplayButton {
     background-color: #ffe4c3; 
     color: black;

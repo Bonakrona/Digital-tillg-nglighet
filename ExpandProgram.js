@@ -33,11 +33,11 @@ expandButton.addEventListener("click", () => {
     if (!isExpanded) {
         settingsDiv.classList.add("collapsed");
         runningDiv.classList.add("expanded");
-        expandButton.textContent = "Collapse";
+        expandButton.innerHTML = `<img src="Images/collapse1.png" height="22" style="vertical-align: -3px;" /> Collapse`;
     } else {
         settingsDiv.classList.remove("collapsed");
         runningDiv.classList.remove("expanded");
-        expandButton.textContent = "Expand";
+        expandButton.innerHTML = `<img src="Images/expand1.png" height="22" style="vertical-align: -3px;" /> Expand`;
     }
 
     isExpanded = !isExpanded;
