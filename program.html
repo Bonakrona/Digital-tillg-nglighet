@@ -27,7 +27,7 @@
         </p>
 
 
-        <button id="getTestText">GetText</button>
+        <button id="getTestText">Get Text</button>
 
 
         <p><strong>Textsize:</strong>
@@ -91,18 +91,21 @@
                     <span class="checkmark"></span>
                 </label>
             </div>-->
+        <br>
+        <br>    
+
         <div>
-            <label class="options"><strong>Moving option</strong>
+            <label class="options"><strong>Moving option</strong> - show five words at a time
                 <input type="checkbox" id="slidingWords" />
                 <span class="checkmark"></span>
             </label>
 
-            <label class="options"><strong>One word option</strong>
+            <label class="options"><strong>One word option</strong> - show one word at a time
                 <input type="checkbox" id="oneWordOption" />
                 <span class="checkmark"></span>
             </label>
 
-            <label class="options"><strong>Mark Option</strong>
+            <label class="options"><strong>Mark Option</strong> - show the whole text
                 <input type="checkbox" id="highlightWords" />
                 <span class="checkmark"></span>
             </label>
@@ -110,6 +113,7 @@
 
 
         <!--samma sätt som font-->
+        <label for="nbrOfWordsButton" id="nbrOfWordsLabel">Highlighted words in Mark Option: </label>
         <select id="nbrOfWordsButton">
             <option value="wholeText" selected>Whole text</option>
             <option value="oneWord">One word</option>
@@ -121,7 +125,9 @@
 
         <h1>Run the program</h1>
 
-        <button id="startButton" class="runButtons">Start</button>
+        <button id="startButton" class="runButtons">Start
+           <!-- <img src="2.png" height="35"/> hur man lägger in ikon-->
+        </button>
         <button id="pauseButton" class="runButtons">Pause</button>
         <button id="backButton" class="runButtons">Back</button>
         <button id="expandButton" class="runButtons">Expand</button>
