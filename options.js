@@ -24,3 +24,16 @@ document.getElementById('slidingWords').addEventListener("click", function () {
     }
 });
 
+var clickOneWord = false
+document.getElementById('oneWordOption').addEventListener("click", function () {
+    if (clickOneWord) {
+        clickOneWord = false
+        console.log("unclicked");
+        document.getElementById("oneWordOption").checked = false;
+    } else {
+        clickOneWord = true
+        console.log("clicked")
+        document.getElementById("oneWordOption").checked = true;
+    }
+});
+

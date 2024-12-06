@@ -23,8 +23,10 @@ function startProgram() {
 
     const highlightWordReader = document.createElement("div");
     const slidingWordReader = document.createElement("div");
+    const oneWordReader = document.createElement("div");
     highlightWordReader.style.backgroundColor = bgColor;
     slidingWordReader.style.backgroundColor = bgColor;
+    oneWordReader.style.backgroundColor = bgColor;
 
 
     const runningDiv = document.getElementById("running");
@@ -42,7 +44,17 @@ function startProgram() {
     slidingWordReader.innerHTML = "";
     slidingWordReader.style.cssText = applyAllStyles;
 
-    if (clickHighlightWords && !clickSlidingWords) {
+    oneWordReader.id = "oneWordReader";
+    oneWordReader.innerHTML = "";
+    oneWordReader.style.cssText = `
+    ${applyAllStyles}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    `;
+
+    if (clickHighlightWords && !clickSlidingWords && !clickOneWord) {
         console.log("Marked function clicked");
 
         let oldHighlightReader = document.getElementById("highlightWordReader");
@@ -54,7 +66,7 @@ function startProgram() {
 
         runningDiv.appendChild(highlightWordReader);
         highlightWords(highlightWordReader);
-    } else if (!clickHighlightWords && clickSlidingWords) {
+    } else if (!clickHighlightWords && clickSlidingWords && !clickOneWord) {
         console.log("Moving function clicked");
 
         let oldSlidingReader = document.getElementById("slidingWordReader");
@@ -68,7 +80,7 @@ function startProgram() {
         runningDiv.appendChild(slidingWordReader);
         startSlidingReader(slidingWordReader);
 
-    } else if (clickHighlightWords && clickSlidingWords) {
+    } else if (clickHighlightWords && clickSlidingWords && !clickOneWord) {
         console.log("Combined function clicked");
 
         let oldSlidingReader = document.getElementById("slidingWordReader");
@@ -90,6 +102,87 @@ function startProgram() {
         runningDiv.appendChild(highlightWordReader);
         highlightWords(highlightWordReader);
 
+    } else if (!clickHighlightWords && !clickSlidingWords && clickOneWord){
+        console.log("Oneword function clicked");
+
+        let oldOneWordReader = document.getElementById("oneWordReader");
+        if (oldOneWordReader) {
+            oldOneWordReader.remove();
+        }
+
+        oneWordReader.append(newContent);
+
+
+        runningDiv.appendChild(oneWordReader);
+        startOneWordReader(oneWordReader); 
+
+    } else if (clickHighlightWords && !clickSlidingWords && clickOneWord){
+        let oldOneWordReader = document.getElementById("oneWordReader");
+        if (oldOneWordReader) {
+            oldOneWordReader.remove();
+        }
+
+        let oldHighlightReader = document.getElementById("highlightWordReader");
+        if (oldHighlightReader) {
+            oldHighlightReader.remove();
+        }
+      
+        oneWordReader.append(newContent.cloneNode(true));
+        highlightWordReader.append(newContent.cloneNode(true));
+
+        runningDiv.appendChild(oneWordReader);
+        startOneWordReader(oneWordReader);
+
+        runningDiv.appendChild(highlightWordReader);
+        highlightWords(highlightWordReader);
+    } else if (!clickHighlightWords && clickSlidingWords && clickOneWord){
+        let oldSlidingReader = document.getElementById("slidingWordReader");
+        if (oldSlidingReader) {
+            oldSlidingReader.remove();
+        }
+
+        let oldOneWordReader = document.getElementById("oneWordReader");
+        if (oldOneWordReader) {
+            oldOneWordReader.remove();
+        }
+      
+        slidingWordReader.append(newContent.cloneNode(true));
+        oneWordReader.append(newContent.cloneNode(true));
+
+        runningDiv.appendChild(oneWordReader);
+        startOneWordReader(oneWordReader);
+
+        runningDiv.appendChild(slidingWordReader);
+        startSlidingReader(slidingWordReader);
+
+    } else if (clickHighlightWords && clickSlidingWords && clickOneWord){
+        let oldSlidingReader = document.getElementById("slidingWordReader");
+        if (oldSlidingReader) {
+            oldSlidingReader.remove();
+        }
+
+        let oldOneWordReader = document.getElementById("oneWordReader");
+        if (oldOneWordReader) {
+            oldOneWordReader.remove();
+        }
+
+        let oldHighlightReader = document.getElementById("highlightWordReader");
+        if (oldHighlightReader) {
+            oldHighlightReader.remove();
+        }
+      
+        slidingWordReader.append(newContent.cloneNode(true));
+        oneWordReader.append(newContent.cloneNode(true));
+        highlightWordReader.append(newContent.cloneNode(true));
+
+        runningDiv.appendChild(oneWordReader);
+        startOneWordReader(oneWordReader);
+
+        runningDiv.appendChild(slidingWordReader);
+        startSlidingReader(slidingWordReader);
+
+        runningDiv.appendChild(highlightWordReader);
+        highlightWords(highlightWordReader);
     } else {
         console.log("None clicked");
     }
@@ -104,6 +197,6 @@ function clearReader(elementID) {
 
 function getTestTextFunction() {
     const textArea = document.getElementById('textarea');
-    textArea.value = "Hi and Welcome! This is a test text you can use in order to try out our options and your figure out your preferences. We truly hope you enjoy this experience and that you will find our tool useful. Please let us know if you have any feedback or suggestions. We are always looking to improve our services. Thank you for your time!";
+    textArea.value = "Hi and Welcome! This is a test text you can use in order to try out our options and figure out your preferences. We truly hope you enjoy this experience and that you will find our tool useful. Please let us know if you have any feedback or suggestions. We are always looking to improve our services. Thank you for your time!";
     console.log("Test text inserted");
 }
