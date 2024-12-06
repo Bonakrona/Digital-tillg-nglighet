@@ -4,8 +4,8 @@
 */
 
 body {
-    background-color: rgb(73, 206, 210);
-    font-family: 'Roboto', sans-serif;
+    background-color: #FAEBD7;
+    font-family: 'Times new Roman';
     margin-top: 80px;
     height: 100%;
     padding: 30px;
@@ -36,10 +36,19 @@ nav li a {
     text-decoration: none;
 }
 
-#welcomeDisplayButton {
-    background-color: rgb(73, 206, 210);
+nav .Home a {
+    color: #1CA3EC;               
+    text-decoration: none;        
+    border: 2px solid #1CA3EC;   
+    padding: 5px 10px;            
+    border-radius: 5px;   
+}
+
+
+/*#welcomeDisplayButton {
+    background-color: #FAEBD7;
     color: black;
-    border: 2px solid rgb(73, 206, 210);
+    border: 2px solid #FAEBD7;
     padding: 10px 24px;
     cursor: pointer;
     border-radius: 5px;
@@ -49,27 +58,47 @@ nav li a {
     display: inline-block;
     text-decoration: none;
     transition: background-color 0.3s, color 0.3s;
-    margin-left: 40%;
-}
-
-#infoDisplayButton {
-    background-color: rgb(73, 206, 210);
+    margin-left: 30%;
+    font-family: 'Times new Roman';
+}*/
+#welcomeDisplayButton {
+    background-color: #ffe4c3; 
     color: black;
-    border: 2px solid rgb(73, 206, 210);
-    padding: 10px 24px;
+    border: 2px solid #FAEBD7;
+    padding: 15px 30px; 
     cursor: pointer;
-    border-radius: 5px;
-    font-size: 28px;
+    border-radius: 8px; 
+    font-size: 36px; 
     margin: 10px;
     text-align: center;
     display: inline-block;
     text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
-    margin-left: 37%;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.2s;
+    margin-left: 28%;
+    font-family: 'Times New Roman', serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#infoDisplayButton {
+    background-color: #ffe4c3; 
+    color: black;
+    border: 2px solid #FAEBD7;
+    padding: 15px 30px; 
+    cursor: pointer;
+    border-radius: 8px; 
+    font-size: 28px; 
+    margin: 10px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.2s;
+    margin-left: 35%;
+    font-family: 'Times New Roman', serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #startButton {
-    background-color: orange;
+    background-color: #1CA3EC;
     color: black;
     border: 2px solid rgb(0, 0, 0);
     padding: 30px 90px;
@@ -83,6 +112,7 @@ nav li a {
     transition: background-color 0.3s, color 0.3s;
     margin-left: 38%;
     margin-top: 70px;
+    font-family: 'Times new Roman';
 }
 
 #welcomeTextField,
@@ -93,31 +123,22 @@ nav li a {
 
 
 .container {
-    border: 1px solid rgb(73, 206, 210);
+    border: 1px solid #FAEBD7;
 }
 
 .container .expanded {
     display: none;
-    padding: 10px;
-
+    padding: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #FAF0E6; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 
-/*#startButton {
-    padding: 15px 25px;
-    font-size: 24px;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-    color: #fff;
-    background-color: #04AA6D;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-  }*/
-
 #startButton:hover {
-    background-color: rgb(108, 45, 3);
+    background-color: #167BB1;
 }
 
 #startButton:active {
@@ -128,20 +149,50 @@ nav li a {
 
 .button {
     position: relative;
-    padding-left: 1em;
-}
-
-.button:hover:after {
-    content: '\2304';
+    padding: 10px 24px;
+    background-color: #FAEBD7;
+    color: black;
+    border: 2px solid #FAEBD7;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: 'Times New Roman', serif;
     display: inline-block;
-    font-size: 1.0m;
-    transition: transform 0.3s ease;
-    transform: translateY(-20%) rotate(0);
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: 30%;
 }
 
-.button.rotate:after {
-    transform: translateY(20%) rotate(-180deg); /* Rotate the arrow 180 degrees while staying centered */
+.button::after {
+    content: '\2304'; 
+    font-size: 25px;  
+    margin-left: 10px; 
+    margin-top: -15px;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    transform: rotate(0deg); 
+    vertical-align: middle; 
 }
+
+.button:hover {
+    background-color: #F5D0A9;  
+    transform: scale(1.05);  
+}
+
+
+.button:active {
+    background-color: #E4B89D;  
+    transform: scale(1); 
+}
+
+.button.rotate::after {
+    transform: translateY(40%) rotate(180deg); 
+}
+
+.button:hover::after {
+    color: #1CA3EC; 
+}
+
 
 
 
