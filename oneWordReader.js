@@ -17,7 +17,7 @@ function startOneWordReader(oneWordReader) {
 
             index++;
 
-            setTimeout(displayNextWord, 1000 / pace);
+            setTimeout(displayNextWord, 2000 / pace);
         }
     }
 

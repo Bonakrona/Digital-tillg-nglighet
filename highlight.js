@@ -44,7 +44,7 @@ function highlightWords(highlightWordReader) {
                 words[index] = word;
             }
             index++;
-            setTimeout(highlightWord, 1000 / pace);
+            setTimeout(highlightWord, 2000 / pace);
         }
     }
     highlightWord();
@@ -69,7 +69,7 @@ function highlightCurrentWord(slidingWordReader) {
             const word = words[i+2];
             words[i+2] = `<span style="background-color: ${highlightColor};"> ${word}</span>`; 
             slidingWordReader.innerHTML = words.join(" ");
-            setTimeout(() => highlightWord(i + 1), 1000 / pace);
+            setTimeout(() => highlightWord(i + 1), 2000 / pace);
         }
     }
     highlightWord(0);

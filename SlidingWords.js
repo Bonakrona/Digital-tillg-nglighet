@@ -22,7 +22,7 @@ function startSlidingReader(slidingWordReader) {
 
             index++;
 
-            setTimeout(displayNextWords, 1000 / pace);
+            setTimeout(displayNextWords, 2000 / pace);
 
         }
     }
