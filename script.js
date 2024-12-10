@@ -74,6 +74,8 @@ function startProgram() {
 
     if (clickHighlightWords && !clickSlidingWords && !clickOneWord) {
         console.log("Marked function clicked");
+        startIcon();
+
 
 
         highlightWordReader.append(newContent);
@@ -82,7 +84,7 @@ function startProgram() {
         highlightWords(highlightWordReader);
     } else if (!clickHighlightWords && clickSlidingWords && !clickOneWord) {
         console.log("Moving function clicked");
-
+        startIcon();
 
         slidingWordReader.append(newContent);
 
@@ -92,7 +94,7 @@ function startProgram() {
 
     } else if (clickHighlightWords && clickSlidingWords && !clickOneWord) {
         console.log("Combined function clicked");
-
+        startIcon();
 
         slidingWordReader.append(newContent.cloneNode(true));
         highlightWordReader.append(newContent.cloneNode(true));
@@ -105,7 +107,7 @@ function startProgram() {
 
     } else if (!clickHighlightWords && !clickSlidingWords && clickOneWord) {
         console.log("Oneword function clicked");
-
+        startIcon();
 
         oneWordReader.append(newContent);
 
@@ -114,7 +116,7 @@ function startProgram() {
         startOneWordReader(oneWordReader);
 
     } else if (clickHighlightWords && !clickSlidingWords && clickOneWord) {
-
+        startIcon();
         oneWordReader.append(newContent.cloneNode(true));
         highlightWordReader.append(newContent.cloneNode(true));
 
@@ -124,7 +126,7 @@ function startProgram() {
         runningDiv.appendChild(highlightWordReader);
         highlightWords(highlightWordReader);
     } else if (!clickHighlightWords && clickSlidingWords && clickOneWord) {
-
+        startIcon();
         slidingWordReader.append(newContent.cloneNode(true));
         oneWordReader.append(newContent.cloneNode(true));
 
@@ -135,7 +137,7 @@ function startProgram() {
         startSlidingReader(slidingWordReader);
 
     } else if (clickHighlightWords && clickSlidingWords && clickOneWord) {
-
+        startIcon();
 
         slidingWordReader.append(newContent.cloneNode(true));
         oneWordReader.append(newContent.cloneNode(true));
