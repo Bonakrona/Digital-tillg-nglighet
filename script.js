@@ -3,6 +3,8 @@ getTestText.addEventListener("click", getTestTextFunction);
 
 function startProgram() {
 
+    let pace = document.getElementById("paceEntered").value;
+
     paused = false;
 
     var textInput = document.getElementById('textarea').value;
@@ -16,7 +18,7 @@ function startProgram() {
     const textColor = document.getElementById("textColor").value || "#000000";
     const bgColor = document.getElementById("bgColor").value || "#ffffff";
 
-    const applyTextSize = `font-size: ${getTextSize}px; line-height: ${(38+(getLineHeight - 1)*5)}px;`;
+    const applyTextSize = `font-size: ${getTextSize}px; line-height: ${(38 + (getLineHeight - 1) * 5)}px;`;
     const applyFont = `font-family: ${selectedFont};`;
 
     const highLightColor = document.getElementById("highlightColor").value || "#ffff00";
@@ -57,13 +59,22 @@ function startProgram() {
     text-align: center;
     `;
 
+    let oldHighlightReader = document.getElementById("highlightWordReader");
+    if (oldHighlightReader) {
+        oldHighlightReader.remove();
+    }
+    let oldSlidingReader = document.getElementById("slidingWordReader");
+    if (oldSlidingReader) {
+        oldSlidingReader.remove();
+    }
+    let oldOneWordReader = document.getElementById("oneWordReader");
+    if (oldOneWordReader) {
+        oldOneWordReader.remove();
+    }
+
     if (clickHighlightWords && !clickSlidingWords && !clickOneWord) {
         console.log("Marked function clicked");
 
-        let oldHighlightReader = document.getElementById("highlightWordReader");
-        if (oldHighlightReader) {
-            oldHighlightReader.remove();
-        }
 
         highlightWordReader.append(newContent);
 
@@ -72,10 +83,6 @@ function startProgram() {
     } else if (!clickHighlightWords && clickSlidingWords && !clickOneWord) {
         console.log("Moving function clicked");
 
-        let oldSlidingReader = document.getElementById("slidingWordReader");
-        if (oldSlidingReader) {
-            oldSlidingReader.remove();
-        }
 
         slidingWordReader.append(newContent);
 
@@ -86,16 +93,7 @@ function startProgram() {
     } else if (clickHighlightWords && clickSlidingWords && !clickOneWord) {
         console.log("Combined function clicked");
 
-        let oldSlidingReader = document.getElementById("slidingWordReader");
-        if (oldSlidingReader) {
-            oldSlidingReader.remove();
-        }
 
-        let oldHighlightReader = document.getElementById("highlightWordReader");
-        if (oldHighlightReader) {
-            oldHighlightReader.remove();
-        }
-      
         slidingWordReader.append(newContent.cloneNode(true));
         highlightWordReader.append(newContent.cloneNode(true));
 
@@ -105,31 +103,18 @@ function startProgram() {
         runningDiv.appendChild(highlightWordReader);
         highlightWords(highlightWordReader);
 
-    } else if (!clickHighlightWords && !clickSlidingWords && clickOneWord){
+    } else if (!clickHighlightWords && !clickSlidingWords && clickOneWord) {
         console.log("Oneword function clicked");
 
-        let oldOneWordReader = document.getElementById("oneWordReader");
-        if (oldOneWordReader) {
-            oldOneWordReader.remove();
-        }
 
         oneWordReader.append(newContent);
 
 
         runningDiv.appendChild(oneWordReader);
-        startOneWordReader(oneWordReader); 
+        startOneWordReader(oneWordReader);
 
-    } else if (clickHighlightWords && !clickSlidingWords && clickOneWord){
-        let oldOneWordReader = document.getElementById("oneWordReader");
-        if (oldOneWordReader) {
-            oldOneWordReader.remove();
-        }
+    } else if (clickHighlightWords && !clickSlidingWords && clickOneWord) {
 
-        let oldHighlightReader = document.getElementById("highlightWordReader");
-        if (oldHighlightReader) {
-            oldHighlightReader.remove();
-        }
-      
         oneWordReader.append(newContent.cloneNode(true));
         highlightWordReader.append(newContent.cloneNode(true));
 
@@ -138,17 +123,8 @@ function startProgram() {
 
         runningDiv.appendChild(highlightWordReader);
         highlightWords(highlightWordReader);
-    } else if (!clickHighlightWords && clickSlidingWords && clickOneWord){
-        let oldSlidingReader = document.getElementById("slidingWordReader");
-        if (oldSlidingReader) {
-            oldSlidingReader.remove();
-        }
+    } else if (!clickHighlightWords && clickSlidingWords && clickOneWord) {
 
-        let oldOneWordReader = document.getElementById("oneWordReader");
-        if (oldOneWordReader) {
-            oldOneWordReader.remove();
-        }
-      
         slidingWordReader.append(newContent.cloneNode(true));
         oneWordReader.append(newContent.cloneNode(true));
 
@@ -158,22 +134,9 @@ function startProgram() {
         runningDiv.appendChild(slidingWordReader);
         startSlidingReader(slidingWordReader);
 
-    } else if (clickHighlightWords && clickSlidingWords && clickOneWord){
-        let oldSlidingReader = document.getElementById("slidingWordReader");
-        if (oldSlidingReader) {
-            oldSlidingReader.remove();
-        }
+    } else if (clickHighlightWords && clickSlidingWords && clickOneWord) {
 
-        let oldOneWordReader = document.getElementById("oneWordReader");
-        if (oldOneWordReader) {
-            oldOneWordReader.remove();
-        }
 
-        let oldHighlightReader = document.getElementById("highlightWordReader");
-        if (oldHighlightReader) {
-            oldHighlightReader.remove();
-        }
-      
         slidingWordReader.append(newContent.cloneNode(true));
         oneWordReader.append(newContent.cloneNode(true));
         highlightWordReader.append(newContent.cloneNode(true));

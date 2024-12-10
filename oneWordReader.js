@@ -1,5 +1,5 @@
 function startOneWordReader(oneWordReader) {
-    const pace = document.getElementById("paceEntered").value;
+    // const pace = document.getElementById("paceEntered").value;
     const text = oneWordReader.textContent;
     const words = text.split(" ");
     let index = 0;
@@ -12,6 +12,7 @@ function startOneWordReader(oneWordReader) {
         }
 
         if (index < words.length) {
+            const pace = document.getElementById("paceEntered").value;
             const currentWord = words[index];
             oneWordReader.innerHTML = `<span style="background-color: ${highlightColor};"> ${currentWord}</span>`; ;
 

@@ -1,5 +1,5 @@
 function highlightWords(highlightWordReader) {
-    const pace = document.getElementById("paceEntered").value;
+    // const pace = document.getElementById("paceEntered").value;
     const highlightColor = document.getElementById("highlightColor").value || "#ffff00";
     const bgColor = document.getElementById("bgColor").value || "#ffffff";
     let index = 0;
@@ -33,7 +33,7 @@ function highlightWords(highlightWordReader) {
         }
 
         if (index < wordCount) {
-
+            const pace = document.getElementById("paceEntered").value;
             const word = words[index];
             words[index] = `<span style="background-color: ${highlightColor};"> ${word}</span>`; 
             highlightWordReader.innerHTML = words.join(" ");
@@ -51,7 +51,7 @@ function highlightWords(highlightWordReader) {
 }
 
 function highlightCurrentWord(slidingWordReader) {
-    const pace = document.getElementById("paceEntered").value;
+    // const pace = document.getElementById("paceEntered").value;
     const highlightColor = document.getElementById("highlightColor").value || "#ffff00";
 
     const text = slidingWordReader.innerHTML;
@@ -66,6 +66,7 @@ function highlightCurrentWord(slidingWordReader) {
 
 
         if (i < wordCount) {
+            const pace = document.getElementById("paceEntered").value;
             const word = words[i+2];
             words[i+2] = `<span style="background-color: ${highlightColor};"> ${word}</span>`; 
             slidingWordReader.innerHTML = words.join(" ");
