@@ -37,3 +37,16 @@ document.getElementById('oneWordOption').addEventListener("click", function () {
     }
 });
 
+
+var clickedPaceWordLength = false
+document.getElementById('paceWordLength').addEventListener("click", function () {
+    if (clickedPaceWordLength) {
+        clickedPaceWordLength = false
+        console.log("unclicked");
+        document.getElementById("paceWordLength").checked = false;
+    } else {
+        clickedPaceWordLength = true
+        console.log("clicked")
+        document.getElementById("paceWordLength").checked = true;
+    }
+});

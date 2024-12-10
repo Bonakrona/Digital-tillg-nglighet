@@ -23,7 +23,14 @@ function startSlidingReader(slidingWordReader) {
 
             index++;
 
-            setTimeout(displayNextWords, 2000 / pace);
+            if(clickedPaceWordLength)  {
+                for (let i = 0; i < words[index].length; i++) {
+                    setTimeout(displayNextWords, 2000 / pace);
+                }
+
+            } else {
+                setTimeout(displayNextWords, 2000 / pace);
+            }
 
         }
     }
