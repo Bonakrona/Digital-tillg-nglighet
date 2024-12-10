@@ -2,6 +2,9 @@ startButton.addEventListener("click", startProgram);
 getTestText.addEventListener("click", getTestTextFunction);
 
 function startProgram() {
+
+    paused = false;
+
     var textInput = document.getElementById('textarea').value;
     const newContent = document.createTextNode(textInput);
 
