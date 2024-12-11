@@ -5,9 +5,9 @@ pauseButton.addEventListener("click", pauseProgram);
 
 function pauseProgram() {
     if (paused) {
-        pauseButton.innerHTML = `<img src="Images/pause1.png" height="22" style="vertical-align: -3px;" /> Pause`;
+        pauseButton.innerHTML = `<img src="Images/pause1.png" height="20" style="vertical-align: -3px;" /> Pause`;
     } else {
-        pauseButton.innerHTML = `<img src="Images/pause1.png" height="22" style="vertical-align: -3px;" /> Resume`;
+        pauseButton.innerHTML = `<img src="Images/pause1.png" height="20" style="vertical-align: -3px;" /> Resume`;
     }
     paused = !paused;
 }
