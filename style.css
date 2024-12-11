@@ -18,7 +18,7 @@ body {
     padding: 0;
     background-color: #FAEBD7;
     height: 100vh;
-    overflow: hidden;
+    /* overflow: hidden; */
     box-sizing: border-box;
 }
 
