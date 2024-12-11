@@ -21,7 +21,7 @@ function startOneWordReader(oneWordReader) {
             let delay;
             if (clickedPaceWordLength) {
                 const wordLength = currentWord.length || 1; // Avoid division by 0
-                delay = (2000 / pace) * wordLength;
+                delay = (2000 / pace) * wordLength * 0.3;
             } else {
                 delay = 2000 / pace;
             }

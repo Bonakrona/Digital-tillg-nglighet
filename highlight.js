@@ -51,7 +51,7 @@ function highlightWords(highlightWordReader) {
                 console.log("Highlight log:");
                 console.log(index);
                 console.log(words[index]);
-                delay = (2000 / pace) * wordLength;
+                delay = (2000 / pace) * wordLength * 0.3;
             } else {
                 delay = 2000 / pace;
             }
@@ -87,7 +87,7 @@ function highlightCurrentWord(slidingWordReader) {
             let delay;
             if (clickedPaceWordLength) {
                 const wordLength = words[i + 2].length || 1; // Avoid division by 0
-                delay = (2000 / pace) * wordLength;
+                delay = (2000 / pace) * wordLength * 0.3;
             } else {
                 delay = 2000 / pace;
             }
