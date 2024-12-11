@@ -21,7 +21,7 @@ function startSlidingReader(slidingWordReader) {
             highlightCurrentWord(slidingWordReader);
 
 
-            index++;
+            /*index++;
 
             if(clickedPaceWordLength)  {
                 for (let i = 0; i < words[index].length; i++) {
@@ -30,7 +30,20 @@ function startSlidingReader(slidingWordReader) {
 
             } else {
                 setTimeout(displayNextWords, 2000 / pace);
+            }*/
+            
+            let delay;
+            if (clickedPaceWordLength) {
+                const wordLength = words[index + 2].length || 1; // Avoid division by 0
+                delay = (2000 / pace) * wordLength;
+                console.log("Slider log:");
+                console.log(index+2)
+            } else {
+                delay = 2000 / pace;
             }
+
+            index++;
+            setTimeout(displayNextWords, delay);
         }
     }
 

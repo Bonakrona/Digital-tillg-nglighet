@@ -44,7 +44,20 @@ function highlightWords(highlightWordReader) {
                 words[index] = word;
             }
             index++;
-            setTimeout(highlightWord, 2000 / pace);
+
+            let delay;
+            if (clickedPaceWordLength) {
+                const wordLength = word.length || 1; // Avoid division by 0
+                console.log("Highlight log:");
+                console.log(index);
+                console.log(words[index]);
+                delay = (2000 / pace) * wordLength;
+            } else {
+                delay = 2000 / pace;
+            }
+
+            setTimeout(highlightWord, delay);
+            // setTimeout(highlightWord, 2000 / pace);
         }
     }
     highlightWord();
@@ -64,14 +77,25 @@ function highlightCurrentWord(slidingWordReader) {
             return;
         }
 
-
-        if (i < wordCount) {
+        if (i < wordCount) { // Ensure index is valid
+            // Calculate delay based on pace and word length of words[i+2]
             const pace = document.getElementById("paceEntered").value;
             const word = words[i+2];
             words[i+2] = `<span style="background-color: ${highlightColor};"> ${word}</span>`; 
             slidingWordReader.innerHTML = words.join(" ");
-            setTimeout(() => highlightWord(i + 1), 2000 / pace);
+
+            let delay;
+            if (clickedPaceWordLength) {
+                const wordLength = words[i + 2].length || 1; // Avoid division by 0
+                delay = (2000 / pace) * wordLength;
+            } else {
+                delay = 2000 / pace;
+            }
+
+            // Highlight the words[i+2]
+            setTimeout(() => highlightWord(i + 1), delay);
         }
     }
     highlightWord(0);
 }
+

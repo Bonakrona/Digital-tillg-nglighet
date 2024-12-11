@@ -14,11 +14,19 @@ function startOneWordReader(oneWordReader) {
         if (index < words.length) {
             const pace = document.getElementById("paceEntered").value;
             const currentWord = words[index];
-            oneWordReader.innerHTML = `<span style="background-color: ${highlightColor};"> ${currentWord}</span>`; ;
+            oneWordReader.innerHTML = `<span style="background-color: ${highlightColor};"> ${currentWord}</span>`;;
 
             index++;
 
-            setTimeout(displayNextWord, 2000 / pace);
+            let delay;
+            if (clickedPaceWordLength) {
+                const wordLength = currentWord.length || 1; // Avoid division by 0
+                delay = (2000 / pace) * wordLength;
+            } else {
+                delay = 2000 / pace;
+            }
+
+            setTimeout(displayNextWord, delay);
         }
     }
 
