@@ -1,3 +1,4 @@
+
 startButton.addEventListener("click", startProgram);
 getTestText.addEventListener("click", getTestTextFunction);
 
@@ -40,24 +41,52 @@ function startProgram() {
     highlightWordReader.innerHTML = "";
     highlightWordReader.style.cssText = applyAllStyles;
 
-    highlightWordReader.style.marginTop = "10px";
+    highlightWordReader.style.marginTop = "20px";
     highlightWordReader.style.height = "400px";  // Fixed height
     highlightWordReader.style.overflowY = "auto";  // Vertical scrolling
     highlightWordReader.style.border = "1px solid #ccc";  // Optional border
 
     slidingWordReader.id = "slidingWordReader";
+    slidingWordReader.style.marginTop = "20px";
     slidingWordReader.innerHTML = "";
     slidingWordReader.style.cssText = applyAllStyles;
 
+    oneWordReader.style.marginTop = "20px";
     oneWordReader.id = "oneWordReader";
     oneWordReader.innerHTML = "";
+    oneWordReader.style.border = "1px solid #ccc";  // Optional border
+
     oneWordReader.style.cssText = `
+    
     ${applyAllStyles}
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     `;
+
+    const countDownDiv = document.createElement("div");
+    countDownDiv.style.backgroundColor = bgColor;
+    countDownDiv.id = "countDownDivId";
+    countDownDiv.innerHTML = "";
+    countDownDiv.style.cssText = applyAllStyles;
+    countDownDiv.style.marginTop = "10px";
+    countDownDiv.style.height = "500px";  // Fixed height
+    countDownDiv.style.overflowY = "auto";  // Vertical scrolling
+    countDownDiv.style.display = "flex";
+    countDownDiv.style.justifyContent = "center";
+    countDownDiv.style.alignItems = "center";
+    countDownDiv.style.fontSize = "100px";
+    runningDiv.appendChild(countDownDiv);
+
+
+    startCoundDown(countDownDiv);
+
+    setTimeout(() => {
+        countDownDiv.remove();  // Remove countdown div after 4 seconds
+    }, 4000);
+
+
 
     let oldHighlightReader = document.getElementById("highlightWordReader");
     if (oldHighlightReader) {
@@ -78,79 +107,101 @@ function startProgram() {
 
 
 
-        highlightWordReader.append(newContent);
-
-        runningDiv.appendChild(highlightWordReader);
-        highlightWords(highlightWordReader);
+        setTimeout(() => {
+            highlightWordReader.append(newContent);
+            runningDiv.appendChild(highlightWordReader);
+            highlightWords(highlightWordReader);
+        }, 4000);
     } else if (!clickHighlightWords && clickSlidingWords && !clickOneWord) {
         console.log("Moving function clicked");
         startIcon();
 
-        slidingWordReader.append(newContent);
 
 
-        runningDiv.appendChild(slidingWordReader);
-        startSlidingReader(slidingWordReader);
+
+        setTimeout(() => {
+            slidingWordReader.append(newContent);
+            runningDiv.appendChild(slidingWordReader);
+            startSlidingReader(slidingWordReader);
+        }, 4000);
+
+
+
 
     } else if (clickHighlightWords && clickSlidingWords && !clickOneWord) {
         console.log("Combined function clicked");
         startIcon();
 
-        slidingWordReader.append(newContent.cloneNode(true));
-        highlightWordReader.append(newContent.cloneNode(true));
+        setTimeout(() => {
+            slidingWordReader.append(newContent.cloneNode(true));
+            highlightWordReader.append(newContent.cloneNode(true));
 
-        runningDiv.appendChild(slidingWordReader);
-        startSlidingReader(slidingWordReader);
+            runningDiv.appendChild(slidingWordReader);
+            startSlidingReader(slidingWordReader);
 
-        runningDiv.appendChild(highlightWordReader);
-        highlightWords(highlightWordReader);
+            runningDiv.appendChild(highlightWordReader);
+            highlightWords(highlightWordReader);
+        }, 4000);
+
+
 
     } else if (!clickHighlightWords && !clickSlidingWords && clickOneWord) {
         console.log("Oneword function clicked");
         startIcon();
 
-        oneWordReader.append(newContent);
+        setTimeout(() => {
+            oneWordReader.append(newContent);
+            runningDiv.appendChild(oneWordReader);
+            startOneWordReader(oneWordReader);
+        }, 4000);
 
 
-        runningDiv.appendChild(oneWordReader);
-        startOneWordReader(oneWordReader);
 
     } else if (clickHighlightWords && !clickSlidingWords && clickOneWord) {
         startIcon();
-        oneWordReader.append(newContent.cloneNode(true));
-        highlightWordReader.append(newContent.cloneNode(true));
 
-        runningDiv.appendChild(oneWordReader);
-        startOneWordReader(oneWordReader);
 
-        runningDiv.appendChild(highlightWordReader);
-        highlightWords(highlightWordReader);
+        setTimeout(() => {
+            oneWordReader.append(newContent.cloneNode(true));
+            highlightWordReader.append(newContent.cloneNode(true));
+            runningDiv.appendChild(oneWordReader);
+            startOneWordReader(oneWordReader);
+            runningDiv.appendChild(highlightWordReader);
+            highlightWords(highlightWordReader);
+        }, 4000);
+
+
     } else if (!clickHighlightWords && clickSlidingWords && clickOneWord) {
         startIcon();
-        slidingWordReader.append(newContent.cloneNode(true));
-        oneWordReader.append(newContent.cloneNode(true));
 
-        runningDiv.appendChild(oneWordReader);
-        startOneWordReader(oneWordReader);
+        setTimeout(() => {
+            slidingWordReader.append(newContent.cloneNode(true));
+            oneWordReader.append(newContent.cloneNode(true));
+            runningDiv.appendChild(oneWordReader);
+            startOneWordReader(oneWordReader);
+            runningDiv.appendChild(slidingWordReader);
+            startSlidingReader(slidingWordReader);
+        }, 4000);
 
-        runningDiv.appendChild(slidingWordReader);
-        startSlidingReader(slidingWordReader);
+
+
+
 
     } else if (clickHighlightWords && clickSlidingWords && clickOneWord) {
         startIcon();
 
-        slidingWordReader.append(newContent.cloneNode(true));
-        oneWordReader.append(newContent.cloneNode(true));
-        highlightWordReader.append(newContent.cloneNode(true));
+        setTimeout(() => {
+            slidingWordReader.append(newContent.cloneNode(true));
+            oneWordReader.append(newContent.cloneNode(true));
+            highlightWordReader.append(newContent.cloneNode(true));
+            runningDiv.appendChild(oneWordReader);
+            startOneWordReader(oneWordReader);
+            runningDiv.appendChild(slidingWordReader);
+            startSlidingReader(slidingWordReader);
+            runningDiv.appendChild(highlightWordReader);
+            highlightWords(highlightWordReader);
+        }, 4000);
 
-        runningDiv.appendChild(oneWordReader);
-        startOneWordReader(oneWordReader);
-
-        runningDiv.appendChild(slidingWordReader);
-        startSlidingReader(slidingWordReader);
-
-        runningDiv.appendChild(highlightWordReader);
-        highlightWords(highlightWordReader);
     } else {
         console.log("None clicked");
     }

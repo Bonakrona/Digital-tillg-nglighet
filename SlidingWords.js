@@ -35,7 +35,7 @@ function startSlidingReader(slidingWordReader) {
             let delay;
             if (clickedPaceWordLength) {
                 const wordLength = words[index + 2].length || 1; // Avoid division by 0
-                delay = (2000 / pace) * wordLength;
+                delay = (2000 / pace) * wordLength * 0.3;
                 console.log("Slider log:");
                 console.log(index+2)
             } else {
