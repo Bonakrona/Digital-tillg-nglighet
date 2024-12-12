@@ -44,6 +44,13 @@ nav .Home a {
     border-radius: 5px;   
 }
 
+.Navbar img {
+    height: 80px;
+    display: inline;
+    vertical-align: middle;
+}
+
+
 #welcomeDisplayButton {
     background-color: #ffe4c3; 
     color: black;

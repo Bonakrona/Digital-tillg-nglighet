@@ -57,6 +57,12 @@ nav .Start a {
     border-radius: 5px;   
 }
 
+.Navbar img {
+    height: 80px;
+    display: inline;
+    vertical-align: middle;
+}
+
 .dropbtn {
     padding: 16px;
     font-size: 16px;
