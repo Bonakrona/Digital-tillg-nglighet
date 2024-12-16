@@ -37,11 +37,11 @@ nav li a {
 }
 
 nav .Start a {
-    color: #1CA3EC;               
-    text-decoration: none;        
-    border: 2px solid #1CA3EC;   
-    padding: 5px 10px;            
-    border-radius: 5px;   
+    color: #1CA3EC;
+    text-decoration: none;
+    border: 2px solid #1CA3EC;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 .Navbar img {
@@ -245,14 +245,15 @@ nav .Start a {
 }
 
 
-#settings, #running {
-    flex: 1; 
+#settings,
+#running {
+    flex: 1;
     transition: flex 0.6s ease, opacity 0.6s ease;
     box-sizing: border-box;
 }
 
 #settings {
-    width: 40%; 
+    width: 40%;
     background-color: #fff;
     padding: 20px;
     margin: 10px;
@@ -260,7 +261,7 @@ nav .Start a {
 }
 
 #running {
-    width: 60%; 
+    width: 60%;
     background-color: #fff;
     padding: 20px;
     margin: 10px;
@@ -270,40 +271,40 @@ nav .Start a {
 #settings.collapsed {
     flex: 0;
     opacity: 0;
-    padding: 0; 
+    padding: 0;
     margin: 0;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 #running.expanded {
-    flex: 1; 
-    width: 100%; 
-    margin: 0;  
+    flex: 1;
+    width: 100%;
+    margin: 0;
 }
 
 
 #nbrOfWordsButton {
-    font-size: 14px; 
-    padding: 8px 15px; 
-    width: 160px; 
-    border-radius: 4px; 
-    border: 1px solid #d4edf9; 
-    background-color: #ffffff; 
+    font-size: 14px;
+    padding: 8px 15px;
+    width: 160px;
+    border-radius: 4px;
+    border: 1px solid #d4edf9;
+    background-color: #ffffff;
 }
 
 #nbrOfWordsButton option {
-    font-size: 16px; 
+    font-size: 16px;
 }
 
 #selectFont {
-    font-size: 14px; 
-    padding: 8px 15px; 
-    width: 160px; 
-    border-radius: 4px; 
-    border: 1px solid #d4edf9; 
-    background-color: #ffffff; 
+    font-size: 14px;
+    padding: 8px 15px;
+    width: 160px;
+    border-radius: 4px;
+    border: 1px solid #d4edf9;
+    background-color: #ffffff;
 }
 
 #selectFont option {
-    font-size: 16px; 
+    font-size: 16px;
 }
