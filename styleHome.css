@@ -51,14 +51,14 @@ nav .Home a {
 }
 
 
-#welcomeDisplayButton {
+#welcomeDisplayButton{
     background-color: #ffe4c3; 
     color: black;
     border: 2px solid #FAEBD7;
     padding: 15px 30px; 
     cursor: pointer;
     border-radius: 8px; 
-    font-size: 36px; 
+    font-size: 42px; 
     margin: 10px;
     text-align: center;
     display: inline-block;
@@ -76,7 +76,7 @@ nav .Home a {
     padding: 15px 30px; 
     cursor: pointer;
     border-radius: 8px; 
-    font-size: 28px; 
+    font-size: 38px; 
     margin: 10px;
     text-align: center;
     display: inline-block;
@@ -85,6 +85,14 @@ nav .Home a {
     margin-left: 35%;
     font-family: 'Times New Roman', serif;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 3rem;;
+}
+
+h2 {
+    font-size: 20px;
 }
 
 #startButton {
@@ -132,7 +140,6 @@ nav .Home a {
 }
 
 #startButton:active {
-    background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
@@ -182,8 +189,4 @@ nav .Home a {
 .button:hover::after {
     color: #1CA3EC; 
 }
-
-
-
-
 

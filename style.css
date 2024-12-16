@@ -1,24 +1,11 @@
 main {}
 
-/* body {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 0;
-    padding: 20px;
-    background-color: #979090;
-    height: 100vh;
-    box-sizing: border-box;
-    margin-top: 100px;
-} */
-
 body {
     display: flex;
     margin-top: 100px;
     padding: 0;
     background-color: #FAEBD7;
     height: 100vh;
-    /* overflow: hidden; */
     box-sizing: border-box;
 }
 
@@ -203,7 +190,6 @@ nav .Start a {
     width: 0;
 }
 
-/* Create a custom checkbox */
 .checkmark {
     position: absolute;
     top: 0;
@@ -213,29 +199,24 @@ nav .Start a {
     background-color: #eee;
 }
 
-/* On mouse-over, add a grey background color */
 .options:hover input~.checkmark {
     background-color: #ccc;
 }
 
-/* When the checkbox is checked, add a blue background */
 .options input:checked~.checkmark {
     background-color: #1CA3EC;
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
 
-/* Show the checkmark when checked */
 .options input:checked~.checkmark:after {
     display: block;
 }
 
-/* Style the checkmark/indicator */
 .options .checkmark:after {
     left: 9px;
     top: 5px;
@@ -250,13 +231,9 @@ nav .Start a {
 
 #highlightWordReader {
     padding: 10px;
-    /* Space inside the div */
     border: 1px solid #ccc;
-    /* Border for visibility */
     border-radius: 5px;
-    /* Rounded corners */
     margin: 100px 0;
-    /* Space above and below */
 }
 
 #slidingWordReader {
@@ -267,28 +244,6 @@ nav .Start a {
     text-align: center;
 }
 
-/* 
-#settings {
-    flex: 1;
-    border: 1px solid #ffffff;
-    padding: 20px;
-    margin: 10px;
-    background-color: #fff;
-    text-align: left;
-    width: 40%;
-}
-
-#running {
-    flex: 1;
-    border: 1px solid #ffffff;
-    padding: 20px;
-    margin: 10px;
-    background-color: #fff;
-    text-align: left;
-    width: 60%;
-} 
-*/
-
 
 #settings, #running {
     flex: 1; 
@@ -297,7 +252,7 @@ nav .Start a {
 }
 
 #settings {
-    width: 40%; /* doesn't work anythome */
+    width: 40%; 
     background-color: #fff;
     padding: 20px;
     margin: 10px;
@@ -305,7 +260,7 @@ nav .Start a {
 }
 
 #running {
-    width: 60%; /* doesn't work anythome */
+    width: 60%; 
     background-color: #fff;
     padding: 20px;
     margin: 10px;

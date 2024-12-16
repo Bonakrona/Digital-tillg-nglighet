@@ -10,45 +10,66 @@
 
     <nav class="Navbar">
         <ul>
-            <img src="Images/LogoReadWebsite.png" alt="Logo symbolizing book">
-            <img src="Images/3.png" alt="Logo symbolizing book">
             <img src="Images/2.png" alt="Logo symbolizing book">
             <li class="Home"><a href="#">Home</a></li>
             <li class="Start"><a href="program.html">Start</a></li>
         </ul>
     </nav>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
     <div class="container">
-        <button class="button" id="welcomeDisplayButton" onclick="expandWelcomeContract()"><span>Welcome to your fast reader!</span></button>
-        <div class="expanded" id="welcomeTextField" style="display: none;">
-            This is a page specifically made to help you reach your full reading
-            potential. To get started you are recommended to first try out all the settings in the test below. If this
-            isn't your
-            first time you are welcome to start the test right away. Good luck!
+
+        <h1>
+            <button class="button" id="welcomeDisplayButton" onclick="expandWelcomeContract()" aria-expanded="false" aria-controls="welcomeTextField">
+                <span>Welcome to your fast reader!</span>
+            </button>
+        </h1>
+
+        <div class="expanded" id="welcomeTextField" aria-hidden="true" style="display: none;"> 
+            <h2 tabindex="-1">
+                This is a website made for an assignment in the course Digital accessibility, TSNS05, at Lunds Technical University.
+                <br>
+                It is specifically made to help you reach your full reading potential. This is done by customizing the page according to your specific needs. With practice,
+                you will get more comfortable with reading and increase your pace. Good luck!
+            </h2>
         </div>
+
     </div>
+
+
+
 
     <br>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <div class="container">
-        <button class="button" id="infoDisplayButton" onclick="expandInfoContract()"><span>Info and how to
-                use!</span></button>
-        <div class="expanded" id="infoTextField" style="display: none;">
-            Configure the settings according to your preferences.
-            The settings are pre set to an appealing appearence. Therefore you can choose to leave the setting as it is.
-            If you want to try out different options you can do so with each of the settings.
-            When you are satisfied click start. This will you be moved to another page.
+        <h1><button class="button" id="infoDisplayButton" aria-expanded="false" aria-controls="infoTextField" onclick="expandInfoContract()"><span>
+                Info and how to use!
+            </span></button>
+        </h1>
+        <div class="expanded" id="infoTextField" aria-hidden="true" style="display: none;">
+            <h2 tabindex="-1">Configure the settings according to your preferences.
+                The settings are pre set to an appealing appearence. Therefore you can choose to leave the setting as it
+                is.
+                If you want to try out different options you can do so with each of the settings.
+                When you are satisfied click start. This will you be moved to another page.
+            
             <br>
             <br>
-            You will recieve three different options, Moving option, One word option and Mark option.
+            
+                You will recieve three different options, Moving option, One word option and Mark option.
+            
             <br>
-            Moving option: It allows you to see five words at a time, where the point is to read the highlighted word positioned in the middle.
+            
+                Moving option: It allows you to see five words at a time, where the point is to read the highlighted
+                word
+                positioned in the middle.
+            
             <br>
-            One word option: Shows one word at a time.
+            
+                One word option: Shows one word at a time.
             <br>
-            Mark option: It shows the whole text, and the reader is supposed to follow the highlighted area.
+                Mark option: It shows the whole text, and the reader is supposed to follow the highlighted area.
+            </h2>
         </div>
     </div>
 
@@ -65,17 +86,6 @@
 
 <!-- 
 TODO:
-
-kunna ta bort hela settings JONA Done
-pause knapp blir resume IDA
-längre ord ger mer tid Jona
-inräkning så att det inte börjar på en gång JONA
-
-förtydliga att det är fem ord som backar IDA
-beskriva mer vad moving och mark option är både i info och bredvid knapparna IDA
-ha med ikoner för start paus, back, resume, quit IDA
-Nytt alternativ 1 ord IDA
-
 quit/reset knapp Om vi har tid
 koppla tangenter till funktioner om vi har tid 
 sliding option glider som en orm om vi har tid
@@ -83,24 +93,15 @@ sliding option glider som en orm om vi har tid
 feedback på om man inte har lagt in text men vill starta programet
     då skulle en runta kunna poppa upp och meddela just det
 
-snygg layout:
-- navbar logga, font, markera nuvarande sida
--hemsidan snygga till
-    förtydliga att man kan trycke ner welcome och info, ge dem även bättre text "welcome to your fast reader" IDA
-
-    Logga JONA
-
 Buggar: 
 tredje ordet är har en fast plats IDA
 
 fall: moving option - pause - back. Highlightern är borta JONA
-fall: paus - start funakr ej JONA
-
-ändra pace mitt i -> flera ord ska ej markeras JONA
 
 Om vi har tid
 ändra antal ord som visas i rörande text (lägg till ett ord)
 udnersökning vad som funakr bäst
 
 
+tabindex="0" för självaste texten som man ska läsa upp så att även skärmläsaren kan läsa den
 -->

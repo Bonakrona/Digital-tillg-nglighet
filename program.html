@@ -10,8 +10,6 @@
 
     <nav class="Navbar">
         <ul>
-            <img src="Images/LogoReadWebsite.png" alt="Logo symbolizing book">
-            <img src="Images/3.png" alt="Logo symbolizing book">
             <img src="Images/2.png" alt="Logo symbolizing book">
             <li class="Home"><a href="home.html">Home</a></li>
             <li class="Start"><a href="#">Start</a></li>
@@ -20,9 +18,9 @@
 
     <div id="settings" class="child">
 
-        <h1>Settings</h1>
+        <h1 tabindex="0" >Settings</h1>
 
-        <p>
+        <p tabindex="0">
             <strong>Paste your chosen text here:</strong>
             <br>
             <textarea id="textarea" class="textarea resize-ta"></textarea>
@@ -32,14 +30,14 @@
         <button id="getTestText">Get Text</button>
 
 
-        <p><strong>Textsize:</strong>
+        <p tabindex="0"><strong>Textsize:</strong>
             <span class="input-wrap">
                 <span class="width-machine" aria-hidden="true"></span>
                 <input id="sizeEntered" class="input" value="34" type="number" max="99" min="1"></span>
         </p>
 
 
-        <label for="fontSelect"><strong>Font:</strong></label>
+        <label for="fontSelect" tabindex="0"><strong>Font:</strong></label>
         <select id="selectFont">
             <option value="Times New Roman" selected>Times New Roman</option>
             <option value="Arial">Arial</option>
@@ -56,19 +54,24 @@
             <option value="Georgia">Georgia</option>
         </select>
 
+        <br>
 
-        <p><strong>Pace:</strong>
+        <p tabindex="0"><strong>Pace:</strong>
             <span class="input-wrap">
                 <span class="width-machine" aria-hidden="true"></span>
                 <input id="paceEntered" class="input" value="3" type="number" max="40" min="1">
             </span>
         </p>
-        <label class="options"><strong>Base pace on word length</strong>
+
+        <label class="options" tabindex="0">
+            <strong>Base pace on word length</strong>
             <input type="checkbox" id="paceWordLength" />
             <span class="checkmark"></span>
         </label>
 
-        <p><strong>Line-height:</strong>
+        <br>
+
+        <p tabindex="0"><strong>Line-height:</strong>
             <span class="input-wrap">
                 <span class="width-machine" aria-hidden="true"></span>
                 <input id="lineHeightEntered" class="input" value="2" type="number" max="10" min="1">
@@ -76,50 +79,36 @@
         </p>
 
 
-        <label for="color-picker"><strong>Text Color:</strong></label>
+        <label for="color-picker" tabindex="0"><strong>Text Color:</strong></label>
         <input type="color" value="#000000" id="textColor" class="colors" />
 
-        <label for="color-picker"><strong>Background Color:</strong></label>
+        <label for="color-picker" tabindex="0"><strong>Background Color:</strong></label>
         <input type="color" value="#ffffff" id="bgColor" class="colors" />
 
-        <label for="color-picker"><strong>Highlight Color:</strong></label>
+        <label for="color-picker" tabindex="0"><strong>Highlight Color:</strong></label>
         <input type="color" value="#ffff00" id="highlightColor" class="colors" />
 
-
-        <!--<div>
-                <label><strong>Moving option</strong>
-                    <input type="checkbox" id="slidingWords" class="options" />
-                    <span class="checkmark"></span>
-                </label>
-                
-                <label><strong>Mark Option</strong>
-                    <input type="checkbox" id="highlightWords" class="options" />
-                    <span class="checkmark"></span>
-                </label>
-            </div>-->
         <br>
         <br>    
 
         <div>
-            <label class="options"><strong>Moving option</strong> - show five words at a time
+            <label class="options" tabindex="0"><strong>Moving option</strong> - show five words at a time
                 <input type="checkbox" id="slidingWords" />
                 <span class="checkmark"></span>
             </label>
 
-            <label class="options"><strong>One word option</strong> - show one word at a time
+            <label class="options" tabindex="0"><strong>One word option</strong> - show one word at a time
                 <input type="checkbox" id="oneWordOption" />
                 <span class="checkmark"></span>
             </label>
 
-            <label class="options"><strong>Mark Option</strong> - show the whole text
+            <label class="options" tabindex="0"><strong>Mark Option</strong> - show the whole text
                 <input type="checkbox" id="highlightWords" />
                 <span class="checkmark"></span>
             </label>
         </div>
 
-
-        <!--samma sätt som font-->
-        <label for="nbrOfWordsButton" id="nbrOfWordsLabel">Highlighted words in Mark Option: </label>
+        <label for="nbrOfWordsButton" id="nbrOfWordsLabel" tabindex="0">Highlighted words in Mark Option: </label>
         <select id="nbrOfWordsButton">
             <option value="wholeText" selected>Whole text</option>
             <option value="oneWord">One word</option>
@@ -129,18 +118,18 @@
 
     <div id="running" class="child">
 
-        <h1>Run the program</h1>
+        <h1 tabindex="0">Run the program</h1>
 
-        <button id="startButton" class="runButtons">
+        <button id="startButton" class="runButtons" tabindex="0">
             <img src="Images/start.png" height="20" style="vertical-align: -3px;"/>   Start
         </button>
-        <button id="pauseButton" class="runButtons">
+        <button id="pauseButton" class="runButtons" tabindex="0">
             <img src="Images/pause1.png" height="20" style="vertical-align: -3px;"/>  Pause
         </button>
-        <button id="backButton" class="runButtons">
+        <button id="backButton" class="runButtons" tabindex="0">
             <img src="Images/back.png" height="20" style="vertical-align: -3px;"/>  5 words
         </button>
-        <button id="expandButton" class="runButtons">
+        <button id="expandButton" class="runButtons" tabindex="0">
             <img src="Images/expand1.png" height="20"  style="vertical-align: -3px;"/> Expand
         </button>
 

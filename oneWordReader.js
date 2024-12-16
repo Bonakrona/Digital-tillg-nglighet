@@ -1,5 +1,5 @@
 function startOneWordReader(oneWordReader) {
-    // const pace = document.getElementById("paceEntered").value;
+    
     const text = oneWordReader.textContent;
     const words = text.split(" ");
     let index = 0;
@@ -20,7 +20,7 @@ function startOneWordReader(oneWordReader) {
 
             let delay;
             if (clickedPaceWordLength) {
-                const wordLength = currentWord.length || 1; // Avoid division by 0
+                const wordLength = currentWord.length || 1; 
                 delay = (2000 / pace) * wordLength * 0.3;
             } else {
                 delay = 2000 / pace;

@@ -11,7 +11,7 @@ function startProgram() {
     var textInput = document.getElementById('textarea').value;
     const newContent = document.createTextNode(textInput);
 
-    const getTextSize = document.getElementById("sizeEntered").value || 14; // Default font size
+    const getTextSize = document.getElementById("sizeEntered").value || 14; 
     const getLineHeight = document.getElementById("lineHeightEntered").value || 2;
     const selectFont = document.getElementById("selectFont");
     const selectedFont = selectFont.value || "Times New Roman";
@@ -42,9 +42,9 @@ function startProgram() {
     highlightWordReader.style.cssText = applyAllStyles;
 
     highlightWordReader.style.marginTop = "20px";
-    highlightWordReader.style.height = "400px";  // Fixed height
-    highlightWordReader.style.overflowY = "auto";  // Vertical scrolling
-    highlightWordReader.style.border = "1px solid #ccc";  // Optional border
+    highlightWordReader.style.height = "400px";  
+    highlightWordReader.style.overflowY = "auto";  
+    highlightWordReader.style.border = "1px solid #ccc";  
 
     slidingWordReader.id = "slidingWordReader";
     slidingWordReader.style.marginTop = "20px";
@@ -54,7 +54,7 @@ function startProgram() {
     oneWordReader.style.marginTop = "20px";
     oneWordReader.id = "oneWordReader";
     oneWordReader.innerHTML = "";
-    oneWordReader.style.border = "1px solid #ccc";  // Optional border
+    oneWordReader.style.border = "1px solid #ccc";  
 
     oneWordReader.style.cssText = `
     
@@ -71,8 +71,8 @@ function startProgram() {
     countDownDiv.innerHTML = "";
     countDownDiv.style.cssText = applyAllStyles;
     countDownDiv.style.marginTop = "10px";
-    countDownDiv.style.height = "500px";  // Fixed height
-    countDownDiv.style.overflowY = "auto";  // Vertical scrolling
+    countDownDiv.style.height = "500px";  
+    countDownDiv.style.overflowY = "auto";  
     countDownDiv.style.display = "flex";
     countDownDiv.style.justifyContent = "center";
     countDownDiv.style.alignItems = "center";
@@ -83,7 +83,7 @@ function startProgram() {
     startCoundDown(countDownDiv);
 
     setTimeout(() => {
-        countDownDiv.remove();  // Remove countdown div after 4 seconds
+        countDownDiv.remove();  
     }, 4000);
 
 
