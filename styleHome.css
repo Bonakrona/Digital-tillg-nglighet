@@ -64,7 +64,7 @@ nav .Home a {
     display: inline-block;
     text-decoration: none;
     transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.2s;
-    margin-left: 28%;
+    margin-left: 27%;
     font-family: 'Times New Roman', serif;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -82,7 +82,7 @@ nav .Home a {
     display: inline-block;
     text-decoration: none;
     transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.2s;
-    margin-left: 35%;
+    margin-left: 32%;
     font-family: 'Times New Roman', serif;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
